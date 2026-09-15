@@ -7,12 +7,12 @@
  * Ce sont les mêmes incidents que ceux affichés sur la page : les barres restent
  * cohérentes avec la liste d'incidents.
  *
- * Pour chaque service (history/<slug>.yml) et chacun des 30 derniers jours civils
+ * Pour chaque service (history/<slug>.yml) et chacun des 365 derniers jours civils
  * (Europe/Paris) : état du jour = pire sévérité rencontrée (down > degraded > up),
  * minutes d'indisponibilité / de dégradation, `none` avant le début de la supervision
  * (`startTime`), `partial` pour le premier jour incomplet.
  *
- * Chaque jour couvert porte aussi `hours` : une lettre par heure civile du jour (23/24/25 en DST),
+ * Les 3 derniers jours portent aussi `hours` : une lettre par heure civile du jour (23/24/25 en DST),
  * u = opérationnel, g = dégradé, d = indisponible, n = hors supervision / futur.
  * Chaque service porte `incidents` : les incidents chevauchant la fenêtre (numéro, titre,
  * sévérité, début, fin) pour afficher le détail d'un jour sans appel API côté navigateur.
@@ -24,7 +24,8 @@ import { readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const TZ = "Europe/Paris";
-const DAYS = 30;
+const DAYS = 365; // jours calculés (le client agrège en semaines pour 1 an / tout)
+const HOURS_DAYS = 3; // `hours` seulement sur les derniers jours (vue 24 h), pour borner la taille du JSON
 const OWNER = process.env.STATUS_OWNER || "GitDFreak";
 const REPO = process.env.STATUS_REPO || "status";
 const OUT = process.env.STATUS_OUT || join("assets", "status-days.json");
@@ -96,7 +97,9 @@ export const computeDays = (site, issues, now = new Date()) => {
   const windows = issues
     .map((i) => ({ sev: severityOf(i), from: new Date(i.created_at), to: i.closed_at ? new Date(i.closed_at) : now, number: i.number }))
     .filter((w) => w.sev && !Number.isNaN(w.from.getTime()));
-  return lastDays(now).map((ymd) => {
+  const all = lastDays(now);
+  return all.map((ymd, idx) => {
+    const withHours = idx >= all.length - HOURS_DAYS;
     const d0 = parisMidnight(ymd);
     const d1 = new Date(d0.getTime() + 36 * 3600 * 1000);
     const dayEnd = parisMidnight(parisDate(d1)); // minuit suivant (gère 23h/25h)
@@ -123,13 +126,13 @@ export const computeDays = (site, issues, now = new Date()) => {
       hours += hd > 0 ? "d" : hg > 0 ? "g" : "u";
     }
     const day = {
-      hours,
       date: ymd,
       state: down > 0 ? "down" : degraded > 0 ? "degraded" : "up",
       down: Math.round(down),
       degraded: Math.round(degraded),
       uptime: Math.round(Math.max(0, 1 - down / Math.max(covered, 1)) * 10000) / 100,
     };
+    if (withHours) day.hours = hours;
     if (from > d0 || to < dayEnd) day.partial = true;
     if (incidents.size) day.incidents = [...incidents];
     return day;
@@ -189,7 +192,8 @@ const test = () => {
   ];
   const days = computeDays(site, issues, now);
   const by = Object.fromEntries(days.map((d) => [d.date, d]));
-  assert(days.length === 30 && days.at(-1).date === "2026-09-15", "30 jours, dernier = aujourd'hui (Paris)");
+  assert(days.length === 365 && days.at(-1).date === "2026-09-15" && days[0].date === "2025-09-16", "365 jours, dernier = aujourd'hui (Paris)");
+  assert(by["2026-09-12"].hours === undefined && by["2026-09-13"].hours && by["2026-09-15"].hours, "`hours` seulement sur les 3 derniers jours");
   assert(by["2026-09-09"].state === "none" && by["2026-09-10"].state === "up" && by["2026-09-10"].partial === true, "avant le début = none ; premier jour partiel");
   assert(by["2026-09-12"].state === "down" && by["2026-09-12"].down === 0 + 0 || by["2026-09-12"].state === "up", "incident 00:30→02:30 Paris n'affecte pas le 12");
   assert(by["2026-09-13"].state === "down" && by["2026-09-13"].down === 120, "13 sept. : 120 min d'indisponibilité (chevauchement minuit géré)");
@@ -197,7 +201,7 @@ const test = () => {
   assert(by["2026-09-15"].state === "down" && by["2026-09-15"].down === 60 && by["2026-09-15"].partial === true, "incident encore ouvert compté jusqu'à maintenant ; jour en cours partiel");
   assert(by["2026-09-11"].state === "up", "issue maintenance ignorée");
   assert(by["2026-09-13"].hours.length === 24 && by["2026-09-13"].hours.startsWith("ddd") && by["2026-09-13"].hours.slice(3).replace(/u/g, "") === "", "13 sept. : incident 00:30→02:30 Paris = heures 00, 01, 02 en 'd', le reste 'u'");
-  assert(by["2026-09-10"].hours.startsWith("nnnnnnnnnnnn") && by["2026-09-10"].hours[12] === "u", "premier jour : heures avant 12:30 Paris en 'n'");
+  assert(by["2026-09-10"].partial === true && by["2026-09-10"].hours === undefined, "premier jour partiel (pas d'heures : hors des 3 derniers jours)");
   assert(by["2026-09-15"].hours.slice(22) === "nn" && by["2026-09-15"].hours[21] === "d", "jour en cours : heures futures 'n', 21h Paris = 'd'");
   const inc = listIncidents(issues, now);
   assert(inc.length === 4 && inc[0].number === 4 && inc[0].end === null && inc[0].title === "X is down", "liste d'incidents : 4 (maintenance exclue), tri récent d'abord, titre sans emoji, en cours = end null");
