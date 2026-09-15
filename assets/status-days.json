@@ -1,0 +1,787 @@
+{
+ "generatedAt": "2026-09-15T20:11:08.142Z",
+ "timeZone": "Europe/Paris",
+ "days": 30,
+ "sites": {
+  "cdn-assets": {
+   "url": "https://assets.datafreak.fr/",
+   "startTime": "2026-09-15T18:04:29.732Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  },
+  "faq-centre-d-aide": {
+   "url": "https://faq.datafreak.fr",
+   "startTime": "2026-09-15T18:04:30.869Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  },
+  "sftp-depot-de-fichiers": {
+   "url": "sftp.freaklabs.fr",
+   "startTime": "2026-09-15T18:04:31.719Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  },
+  "site-data-freak": {
+   "url": "https://www.datafreak.fr",
+   "startTime": "2026-09-15T18:04:27.980Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  },
+  "site-freak-labs": {
+   "url": "https://freaklabs.io",
+   "startTime": "2026-09-15T18:04:28.495Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  },
+  "webhooks-n8n": {
+   "url": "https://n8n.datafreak.fr/webhook/status-probe",
+   "startTime": "2026-09-15T18:04:28.959Z",
+   "days": [
+    {
+     "date": "2026-08-17",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-18",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-19",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-20",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-21",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-22",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-23",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-24",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-25",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-26",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-27",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-28",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-29",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-30",
+     "state": "none"
+    },
+    {
+     "date": "2026-08-31",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-01",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-02",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-03",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-04",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-05",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-06",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-07",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-08",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-09",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-10",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-11",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-12",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-13",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-14",
+     "state": "none"
+    },
+    {
+     "date": "2026-09-15",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "partial": true
+    }
+   ]
+  }
+ }
+}

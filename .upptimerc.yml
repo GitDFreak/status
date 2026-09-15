@@ -35,17 +35,28 @@ sites:
 status-website:
   cname: status.datafreak.fr
   logoUrl: https://cdn.prod.website-files.com/68a34db27e193e45ab14a309/690f77b10cc6cca6fec37892_logotype-red.svg
-  name: Statut DataFreak
-  introTitle: "État des services **DataFreak**"
-  introMessage: "Disponibilité et temps de réponse de nos services publics, mesurés toutes les 5 minutes depuis l'extérieur de notre infrastructure. Les incidents sont publiés sur cette page. Besoin d'aide ? [Centre d'aide](https://faq.datafreak.fr) · [Site DataFreak](https://www.datafreak.fr)"
+  name: Statut Datafreak
+  introTitle: "Le point sur **vos services.**"
+  introMessage: "Disponibilité, incidents, maintenances. Retrouvez les informations utiles sur les services Datafreak et Freaklabs, au même endroit."
   navbar:
     - title: Statut
       href: /
-    - title: DataFreak
-      href: https://www.datafreak.fr
-    - title: Centre d'aide
+    - title: Datafreak ↗
+      href: https://www.datafreak.fr/
+    - title: Aide ↗
       href: https://faq.datafreak.fr
   theme: light
+  # Thème Datafreak v3 : CSS chargé après global.css ; le script lit /status-days.json
+  # (précalculé par le workflow status-days, même origine) — aucun appel api.github.com
+  # côté navigateur. Bumper ?v= à chaque modification des fichiers assets/.
+  links:
+    - rel: stylesheet
+      href: https://status.datafreak.fr/datafreak-status.css?v=3
+  scripts:
+    - src: https://status.datafreak.fr/datafreak-status.js?v=3
+      async: true
+  customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
+  customFootHtml: '<aside class="df-foot" aria-label="Aide et liens utiles"> <div class="df-foot-top"> <div><div class="df-foot-title">Besoin d’un coup de main ?</div> <p>Un accès bloqué, une question : consultez le centre d’aide.</p></div> <a class="df-help" href="https://faq.datafreak.fr">Accéder au centre d’aide <span aria-hidden="true">↗</span></a> </div> <div class="df-foot-bottom"> <div class="df-foot-links"> <a href="https://www.datafreak.fr/">DATAFREAK ↗</a> <a href="https://freaklabs.io/">FREAKLABS ↗</a> </div> <span class="df-tricolor" aria-hidden="true"><i></i><i></i><i></i></span> </div> </aside>'
 
 # Métadonnées du dépôt gérées à la main (évite la permission « Administration »
 # sur le token GH_PAT à grain fin).
@@ -59,7 +70,7 @@ assignees:
 i18n:
   # ── Site web ──
   activeIncidents: Incidents en cours
-  allSystemsOperational: Tous les services sont opérationnels
+  allSystemsOperational: Aucun incident en cours publié
   incidentReport: "Rapport d'incident #$NUMBER →"
   activeIncidentSummary: Ouvert le $DATE, $POSTS mise(s) à jour
   incidentTitle: Détails de l'incident $NUMBER
@@ -73,8 +84,8 @@ i18n:
   incidentBack: ← Retour à tous les incidents
   pastIncidents: Incidents passés
   pastIncidentsResolved: Résolu en $MINUTES minutes, $POSTS mise(s) à jour
-  liveStatus: Statut en direct
-  overallUptime: "Disponibilité globale : $UPTIME"
+  liveStatus: Service par service.
+  overallUptime: "Disponibilité : $UPTIME"
   overallUptimeTitle: Disponibilité globale
   averageResponseTime: "Temps de réponse moyen : $TIMEms"
   averageResponseTimeTitle: Réponse moyenne
