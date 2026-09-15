@@ -255,3 +255,47 @@ body{padding:0;margin:0;background:#fff;color:var(--df-ink);font-family:'DF Robo
 #sapper .live-status article{min-height:144px;padding-top:20px;padding-bottom:20px}
 #sapper .df-help{min-width:260px;justify-content:space-between}
 @media(max-width:760px){#sapper .df-help{min-width:0}#sapper .live-status article.df-has-bars{padding-top:21px;padding-bottom:21px}}
+
+/* V5 — panneau du jour (clic sur une barre) + barres sur la page détail. Même vocabulaire que le thème. */
+#sapper .df-history{grid-row:1 / span 5}
+#sapper button.df-bar[aria-expanded="true"]::before{transform:scaleY(1.16);box-shadow:0 0 0 2px #fff,0 0 0 3px var(--df-ink)}
+#sapper .df-day{margin-top:14px;padding:18px 20px 16px;border:1px solid var(--df-line);border-left:3px solid var(--df-ink);background:#fafbfb;animation:df-day-in .16s ease-out}
+@keyframes df-day-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+#sapper .df-day-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:14px}
+#sapper .df-day-title{font-size:17px;font-weight:700;letter-spacing:-.02em}
+#sapper .df-day-kpi{display:flex;flex-wrap:wrap;gap:6px 14px;font:11px/1.6 var(--df-mono);color:var(--df-muted)}
+#sapper .df-day-state{padding:1px 8px;border-radius:20px;background:#dff7e9;color:#165b39;font-family:'DF Roboto',Arial,sans-serif;font-weight:500}
+#sapper .df-day-state.is-down{background:#ffe7e3;color:#a21e1b}
+#sapper .df-day-state.is-degraded{background:#fff0ca;color:#805300}
+#sapper .df-day-uptime{color:var(--df-ink)}
+#sapper .df-day-partial::before{content:'· '}
+#sapper button.df-day-close{margin-left:auto;border:1px solid var(--df-line);background:#fff;padding:6px 12px;min-height:32px;font:11px/1 var(--df-mono);cursor:pointer;color:var(--df-ink)}
+#sapper button.df-day-close:hover{background:var(--df-lime);border-color:var(--df-lime)}
+#sapper .df-hours-wrap{margin-bottom:14px}
+#sapper .df-hours{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:2px;height:22px}
+#sapper .df-hour{display:block;border-radius:2px;background:#dce2e6;min-width:0}
+#sapper .df-hour[data-state="up"]{background:#4fd491}
+#sapper .df-hour[data-state="down"]{background:#e52320}
+#sapper .df-hour[data-state="degraded"]{background:#e9ad45}
+#sapper .df-hour[data-state="none"]{background:repeating-linear-gradient(135deg,#e6eaed 0 3px,#f4f6f7 3px 6px)}
+#sapper .df-hours-axis{display:flex;justify-content:space-between;margin-top:4px;font:9px/1.5 var(--df-mono);color:#727c86}
+#sapper .df-day-incidents-title{font:10px/1.5 var(--df-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--df-muted);margin-bottom:6px}
+#sapper .df-day-none{margin:0;font-size:13px;color:var(--df-muted)}
+#sapper a.df-incident{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:10px 12px;margin-top:6px;border:1px solid var(--df-line);background:#fff;text-decoration:none;font-size:13px;min-height:44px}
+#sapper a.df-incident:hover{border-color:var(--df-ink)}
+#sapper .df-incident-sev{font-weight:500;padding:1px 8px;border-radius:20px;background:#ffe7e3;color:#a21e1b;font-size:12px}
+#sapper .df-incident-sev.is-degraded{background:#fff0ca;color:#805300}
+#sapper .df-incident-when{font:11px/1.6 var(--df-mono);color:var(--df-muted)}
+#sapper .df-incident-link{margin-left:auto;font-size:12px;font-weight:500;color:var(--df-red-text)}
+/* Page détail : bloc « Les 30 derniers jours » sous le résumé, avant les courbes natives */
+#sapper section.df-detail{margin:8px 0 36px;padding:22px 0 8px;border-top:2px solid var(--df-ink)}
+#sapper section.df-detail h2{font-size:22px;margin-bottom:14px}
+#sapper section.df-detail .df-history{grid-column:auto;grid-row:auto}
+@media(max-width:760px){
+ #sapper .df-day{padding:14px 14px 12px}
+ #sapper .df-day-title{font-size:16px}
+ #sapper .df-hours{height:18px;gap:1px}
+ #sapper a.df-incident{font-size:12px}
+ #sapper .df-incident-link{margin-left:0;width:100%}
+}
+@media(prefers-reduced-motion:reduce){#sapper .df-day{animation:none}}
