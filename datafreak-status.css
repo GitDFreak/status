@@ -1,0 +1,257 @@
+/* DATAFREAK / Upptime — v1.0
+   Loaded AFTER global.css via status-website.links.
+   Native statuses, charts, routing and incident content remain owned by Upptime.
+   No generated Svelte class names are used. */
+@font-face{font-family:DF Roboto;src:url('/Roboto-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:DF Roboto;src:url('/Roboto-Medium.woff2') format('woff2');font-weight:500 900;font-display:swap}
+@font-face{font-family:DF Mono;src:url('/RobotoMono-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{
+ color-scheme:light;
+ --df-red:#e52320;--df-red-text:#b21b18;--df-lime:#ddf56b;--df-ink:#17191c;--df-muted:#5e646b;--df-line:#d6dadf;
+ --body-background-color:#fff;--body-text-color:var(--df-ink);--card-background-color:#fff;
+ --nav-background-color:#fff;--nav-border-bottom-color:var(--df-line);--nav-current-border-bottom-color:var(--df-red);
+ --card-border-color:var(--df-line);--down-border-left-color:#b21b18;--down-background-color:#fff3f1;
+ --degraded-border-left-color:#936000;--up-border-left-color:#187047;
+ --down-color-color:var(--df-ink);--degraded-color-color:var(--df-ink);--up-color-color:var(--df-ink);
+ --tag-color:#fff;--tag-up-background-color:#187047;--tag-down-background-color:#b21b18;--tag-degraded-background-color:#805300;
+ --change-background-color:#edf6c8;--error-button-border-color:#b21b18;--error-button-background-color:#b21b18;--error-button-color:#fff;
+ --submit-button-border-color:#b21b18;--submit-button-background-color:#b21b18;--submit-button-color:#fff;
+ --code-color:#17191c;--code-background-color:#f2f4f5;--graph-opacity:1;--graph-filter:none;
+ --df-mono:'DF Mono','Courier New',monospace;
+}
+html{scroll-padding-top:24px}
+body{padding:0;margin:0;background:#fff;color:var(--df-ink);font-family:'DF Roboto',Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+#sapper *,#sapper *::before,#sapper *::after{box-sizing:border-box}
+#sapper a{color:inherit;text-underline-offset:4px}
+#sapper :focus-visible{outline:3px solid var(--df-red-text);outline-offset:5px}
+#sapper .container{width:100%;max-width:1168px;margin-inline:auto;padding-inline:32px}
+#sapper nav{margin:20px auto 0;padding:0 24px;max-width:1216px;border:0;background:white;overflow:visible;white-space:normal;font-weight:500}
+#sapper nav .container{padding:12px 24px;border:1px solid var(--df-line);border-radius:8px;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+#sapper nav .logo{float:none;margin:0;padding:8px 0;display:flex;align-items:center;position:relative;min-height:44px}
+#sapper nav .logo img{display:block;width:174px;height:auto;max-width:100%;border-radius:0;margin:0}
+/* Keep the native title as the link's accessible name. */
+#sapper nav .logo>div{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#sapper nav ul{display:flex;flex:0 0 auto;gap:8px;list-style:none;margin:0;padding:0;flex-wrap:nowrap;white-space:nowrap;justify-content:flex-end}
+#sapper nav ul li{flex-shrink:0}
+#sapper nav ul a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:4px;text-decoration:none;font-size:14px;line-height:1.4;transition:background-color .16s ease}
+#sapper nav ul a:hover{background:#f3f5f6}
+#sapper nav ul a[aria-current="page"]{background:var(--df-lime);border-color:transparent;color:var(--df-ink)}
+#sapper main.container{padding-top:64px;padding-bottom:16px;min-width:0}
+#sapper main>header{position:relative;padding:0 0 42px;margin:0 0 32px;border-bottom:1px solid var(--df-line)}
+#sapper main>header::before{content:'DATAFREAK / DISPONIBILITÉ';display:inline-block;margin-bottom:24px;padding:5px 9px;background:var(--df-lime);font:11px/1.5 var(--df-mono);letter-spacing:.06em}
+#sapper h1{max-width:950px;font-size:clamp(38px,5.5vw,68px);line-height:1.06;font-weight:700;letter-spacing:-.055em;margin:0 0 24px;overflow-wrap:break-word}
+#sapper main>header h1 strong{display:block;color:var(--df-red);font-weight:700}
+#sapper main>header p.lead{max-width:720px;margin:0;color:var(--df-muted);font-size:18px;line-height:1.65}
+#sapper main>header p a{color:var(--df-red-text)}
+#sapper h2{font-size:26px;line-height:1.25;letter-spacing:-.025em;font-weight:700;margin:0 0 22px}
+#sapper h3{font-size:17px;color:var(--df-muted);opacity:1;line-height:1.5}
+#sapper h4{font-size:19px;line-height:1.3;font-weight:700;margin:0 0 12px;letter-spacing:-.02em;overflow-wrap:anywhere}
+#sapper section{min-width:0}
+#sapper main>section{margin-bottom:36px}
+#sapper article{border-radius:4px;padding:24px;line-height:1.6;overflow-wrap:anywhere}
+#sapper article+article{margin-top:12px}
+#sapper article.up,#sapper article.down,#sapper article.degraded{border-left-width:3px}
+#sapper main>article.up{background:#f2f8f4;margin-bottom:32px;padding:18px 22px;font-size:16px;font-weight:500}
+#sapper article.down-active{background:#fff3f1}
+#sapper article.degraded-active{background:#fff8e8}
+#sapper article .f{gap:16px}
+#sapper article p:last-child{margin-bottom:0}
+#sapper main>.f{gap:20px;margin:40px 0 18px;align-items:center}
+#sapper main>.f h2{margin:0;flex:1 1 auto}
+#sapper form.r{gap:0;border:1px solid var(--df-line);padding:3px;background:#fff;border-radius:5px;display:flex;flex-wrap:nowrap;max-width:100%}
+#sapper form.r>div{position:relative;min-width:0;flex:1}
+/* Upptime hides radios with display:none; this keeps keyboard navigation. */
+#sapper form.r input[type="radio"]{display:block;position:absolute;width:1px;height:1px;margin:0;padding:0;opacity:0;overflow:hidden;clip:rect(0,0,0,0)}
+#sapper form.r label{display:block;margin:0;padding:11px 13px;min-height:44px;text-align:center;white-space:nowrap;font:12px/22px var(--df-mono);border-radius:3px;cursor:pointer}
+#sapper form.r input:checked+label{background:var(--df-ink);color:#fff;font-weight:400}
+#sapper form.r input:focus-visible+label{outline:3px solid var(--df-red-text);outline-offset:2px}
+#sapper .live-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:52px}
+#sapper .live-status article{margin:0;min-width:0;padding:24px 24px 106px;min-height:244px;transition:border-color .18s ease,box-shadow .18s ease}
+#sapper .live-status article.graph{background-image:var(--background);background-size:auto 78px;background-repeat:no-repeat;background-position:right 16px bottom 10px}
+#sapper .live-status article:hover{border-top-color:#8c939c;border-right-color:#8c939c;border-bottom-color:#8c939c;box-shadow:0 5px 18px #17191c0b}
+#sapper .live-status h4{padding-right:0;margin:0 0 18px}
+#sapper .live-status h4 a{text-decoration:none}
+#sapper .live-status h4 a:focus-visible::after{outline:3px solid var(--df-red-text);outline-offset:3px;border-radius:4px}
+#sapper .live-status .icon{width:16px;height:16px;margin-right:7px;transform:none;vertical-align:baseline}
+#sapper .live-status article>div{font-size:13px;color:var(--df-muted);line-height:1.9}
+#sapper .live-status .data{font:500 14px/1.5 var(--df-mono);color:var(--df-ink);padding:0 0 0 5px;border-radius:0;white-space:nowrap}
+#sapper .df-service-state{display:table;font:10px/1.5 var(--df-mono);letter-spacing:.025em;padding:4px 7px;margin:0 0 14px;background:#edf6ef;color:#17623f;border-radius:2px}
+#sapper .down>.df-service-state{background:#ffe9e5;color:#a61b18}
+#sapper .degraded>.df-service-state{background:#fff0cc;color:#805300}
+#sapper .tag{font:11px/1.4 var(--df-mono);padding:5px 8px;border-radius:2px;vertical-align:middle}
+/* Detail pages: retain all native charts, history tables and comment content. */
+#sapper main img,#sapper main svg{max-width:100%;height:auto}
+#sapper main pre{overflow-x:auto;padding:16px;background:#f2f4f5;font-size:13px}
+#sapper main table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}
+#sapper main th,#sapper main td{padding:12px;text-align:left;border-bottom:1px solid var(--df-line)}
+#sapper main dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+#sapper main dt{font-size:13px;color:var(--df-muted)}
+#sapper main dd{margin:0 0 12px;font-family:var(--df-mono);overflow-wrap:anywhere}
+#sapper .error-button,#sapper .submit-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;min-height:48px;border-radius:4px;font:500 15px/1.4 'DF Roboto',Arial,sans-serif;text-decoration:none}
+#sapper footer{max-width:1104px;padding:24px 0;margin:40px auto 0;border-top:1px solid var(--df-line);text-align:left;opacity:1;color:var(--df-muted);font:11px/1.8 var(--df-mono)}
+#sapper footer p{margin:0}
+#sapper .df-foot{max-width:1168px;margin:0 auto;padding:12px 32px 40px;color:var(--df-ink)}
+#sapper .df-foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:28px}
+#sapper .df-foot-title{font-size:28px;font-weight:700;letter-spacing:-.04em;line-height:1.2;margin:0 0 8px}
+#sapper .df-foot p{margin:0;color:var(--df-muted);font-size:14px}
+#sapper .df-help{white-space:nowrap;flex-shrink:0;display:inline-flex;min-height:48px;align-items:center;gap:24px;padding:12px 18px;border:1px solid var(--df-line);border-radius:4px;text-decoration:none;font-weight:500;font-size:14px}
+#sapper .df-help:hover{background:var(--df-lime);border-color:var(--df-lime)}
+#sapper .df-foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;border-top:1px solid var(--df-line)}
+#sapper .df-foot-links{display:flex;flex:1 1 auto;flex-wrap:wrap;gap:12px 24px;font:11px/1.6 var(--df-mono)}
+#sapper .df-foot-links a{white-space:nowrap;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+#sapper .df-foot-links a:hover{text-decoration:underline}
+#sapper .df-tricolor{width:200px;max-width:35%;height:6px;display:flex;flex-shrink:0}
+#sapper .df-tricolor i:nth-child(1){width:60%;background:var(--df-red)}
+#sapper .df-tricolor i:nth-child(2){width:22%;background:var(--df-lime)}
+#sapper .df-tricolor i:nth-child(3){width:18%;background:var(--df-ink)}
+#sapper .df-skip{position:absolute;top:0;left:16px;transform:translateY(-160%);z-index:1000;background:white;padding:14px;border:2px solid var(--df-red-text)}
+#sapper .df-skip:focus{transform:translateY(0)}
+@media(max-width:760px){
+ #sapper .container{padding-inline:24px}
+ #sapper nav{padding:0 16px;margin-top:16px}
+ #sapper nav .container{padding:12px 16px;gap:12px;flex-wrap:wrap}
+ #sapper nav .logo img{width:160px}
+ #sapper nav ul{gap:0;justify-content:flex-start;max-width:100%;flex-wrap:wrap}
+ #sapper nav ul a{padding:10px 12px;font-size:13px}
+ #sapper main.container{padding-top:40px}
+ #sapper main>header{padding-bottom:30px;margin-bottom:24px}
+ #sapper main>header::before{font-size:10px;margin-bottom:20px}
+ #sapper h1{font-size:44px;font-size:clamp(36px,8vw,54px);letter-spacing:-.045em}
+ #sapper main>header p.lead{font-size:16px;line-height:1.65}
+ #sapper h2{font-size:23px}
+ #sapper main>.f{align-items:stretch;gap:16px;margin-top:32px}
+ #sapper main>.f h2{width:100%}
+ #sapper form.r{width:100%}
+ #sapper form.r label{padding:11px 6px;font-size:11px}
+ #sapper .live-status{grid-template-columns:1fr;gap:12px}
+ #sapper .live-status article{padding:20px 20px 88px;min-height:230px}
+ #sapper .live-status article.graph{background-size:auto 64px;background-position:right 12px bottom 10px}
+ #sapper .live-status h4{font-size:18px}
+ #sapper article{padding:20px}
+ #sapper main dl{display:block}
+ #sapper footer{margin:28px 24px 0;padding:22px 0}
+ #sapper .df-foot{padding:8px 24px 28px}
+ #sapper .df-foot-top{display:block}
+ #sapper .df-foot-title{font-size:25px}
+ #sapper .df-help{margin-top:20px;justify-content:space-between;width:100%}
+ #sapper .df-foot-bottom{align-items:flex-start;flex-direction:column;gap:16px}
+ #sapper .df-tricolor{align-self:flex-end;width:160px;max-width:70%}
+}
+@media(max-width:400px){
+ #sapper nav .container{display:block}
+ #sapper nav ul{margin-top:8px}
+ #sapper nav ul a{padding:10px}
+ #sapper .container{padding-inline:20px}
+ #sapper .live-status article>div{font-size:12px}
+ #sapper .live-status .data{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){#sapper *,#sapper *::before,#sapper *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{#sapper nav,#sapper .df-skip,#sapper .df-help{display:none}#sapper main.container{padding-top:20px}#sapper article{break-inside:avoid;box-shadow:none}#sapper a{color:#17191c}}
+
+/* V2 — editorial service console, availability bars. */
+#sapper nav{max-width:1240px;margin:0 auto;padding:0 32px}
+#sapper nav .container{padding:24px 0;min-height:100px;border:0;border-radius:0;border-bottom:1px solid var(--df-line)}
+#sapper nav .logo img{width:185px}
+#sapper nav ul a{border-radius:0;font-size:13px}
+#sapper nav ul a[aria-current="page"]{background:none;border-bottom:2px solid var(--df-red);color:var(--df-ink)}
+#sapper nav ul li:last-child a{background:var(--df-lime);padding-inline:20px}
+#sapper main.container{max-width:1176px;padding-top:48px}
+#sapper main>header{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);column-gap:64px;padding-bottom:48px;margin-bottom:32px;border-bottom:0}
+#sapper main>header::before{grid-column:1 / -1;justify-self:start;margin-bottom:26px;padding:0;background:none;font-size:10px;letter-spacing:.08em;content:'DATAFREAK / ÉTAT DES SERVICES'}
+#sapper main>header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(to right,var(--df-red) 0 65%,var(--df-lime) 65% 86%,var(--df-ink) 86% 100%)}
+#sapper main>header h1{font-size:clamp(44px,6vw,76px);letter-spacing:-.065em;line-height:.99;margin:0}
+#sapper main>header p.lead{align-self:end;font-size:16px;line-height:1.6;max-width:390px;padding-bottom:4px}
+#sapper main>article.up{border:0;border-left:3px solid #187047;border-radius:0;background:#f1f9f4;padding:15px 20px;font-size:14px;margin-bottom:28px}
+#sapper main>.f{margin:30px 0 20px;gap:16px}
+#sapper main>.f h2{font-size:28px;letter-spacing:-.04em}
+#sapper form.r{padding:0;border-radius:0;border:0;border-bottom:1px solid var(--df-line)}
+#sapper form.r label{border-radius:0;font-size:11px;padding:10px 14px}
+#sapper form.r input:checked+label{background:var(--df-lime);color:var(--df-ink)}
+#sapper .live-status{display:block;counter-reset:services;border-top:2px solid var(--df-ink);margin:0}
+#sapper .live-status article{position:relative;min-height:174px;padding:26px 24px 26px 54px;border:0;border-bottom:1px solid var(--df-line);border-radius:0;background-color:#fff;box-shadow:none;margin:0}
+#sapper .live-status article::before{counter-increment:services;content:counter(services,decimal-leading-zero);position:absolute;top:30px;left:0;font:11px/1.4 var(--df-mono);color:var(--df-muted)}
+#sapper .live-status article:hover{background-color:#fafcfb;border-bottom-color:var(--df-line);box-shadow:none}
+#sapper .live-status article.df-has-bars{background-image:none!important;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);grid-template-rows:auto auto auto auto;column-gap:64px;align-content:center}
+#sapper .live-status article h4{grid-column:1;grid-row:1;margin:0 0 6px;font-size:21px;font-weight:700;letter-spacing:-.035em}
+#sapper .live-status article h4 a{display:inline-flex;align-items:center;min-height:32px}
+#sapper .live-status article.link a::after{content:none}
+#sapper .live-status article h4 a:hover{color:var(--df-red-text);text-decoration:underline}
+#sapper .live-status article>div:not(.df-history){grid-column:1;color:var(--df-muted);font-size:11px;line-height:1.7}
+#sapper .live-status article>.df-service-state{grid-column:1;grid-row:2;justify-self:start;display:inline-flex;align-items:center;gap:6px;padding:3px 9px;margin:0 0 12px;font:11px/1.5 'DF Roboto',Arial,sans-serif;border-radius:20px;background:#dff7e9;color:#165b39}
+#sapper .df-service-state::before{content:'';width:6px;height:6px;background:currentColor;border-radius:100%;flex:none}
+#sapper article[data-df-freshness="down"]>.df-service-state{background:#ffe7e3;color:#a21e1b}
+#sapper article[data-df-freshness="degraded"]>.df-service-state{background:#fff0ca;color:#805300}
+#sapper article[data-df-freshness="unknown"]>.df-service-state,#sapper article[data-df-freshness="loading"]>.df-service-state,#sapper article[data-df-freshness="error"]>.df-service-state{background:#edf0f2;color:#59616b}
+#sapper .live-status .data{font-size:12px;font-weight:400}
+#sapper .live-status .icon{display:none}
+#sapper .df-history{grid-column:2;grid-row:1 / span 4;min-width:0;align-self:center;position:relative}
+#sapper .df-history-head{display:flex;justify-content:space-between;gap:12px;color:var(--df-muted);font:10px/1.5 var(--df-mono);margin-bottom:8px}
+#sapper .df-history-note{color:#7b838c;text-align:right}
+#sapper .df-bars{display:flex;gap:4px;align-items:center;height:44px;width:100%;isolation:isolate}
+#sapper button.df-bar{position:relative;display:block;flex:1 1 0;min-width:0;height:44px;border:0;border-radius:0;background:transparent;padding:0;cursor:pointer;color:inherit;transition:transform .14s ease}
+#sapper button.df-bar::before{content:'';position:absolute;inset:7px 0;border-radius:4px;background:#dce2e6;transition:background-color .14s ease,transform .14s ease}
+#sapper button.df-bar[data-state="up"]::before{background:#4fd491}
+#sapper button.df-bar[data-state="down"]::before{background:#e52320}
+#sapper button.df-bar[data-state="degraded"]::before{background:#e9ad45}
+#sapper button.df-bar:hover::before,#sapper button.df-bar:focus-visible::before{transform:scaleY(1.16)}
+#sapper button.df-bar:focus-visible{outline:2px solid #17191c;outline-offset:2px;border-radius:4px;z-index:2}
+#sapper button.df-bar[data-selected="true"]::after{content:'';position:absolute;bottom:0;left:25%;right:25%;height:2px;background:#17191c}
+#sapper .df-bar-caption{display:flex;justify-content:space-between;font:9px/1.5 var(--df-mono);color:#727c86;margin-top:0}
+#sapper .df-bar-detail{font:10px/1.5 var(--df-mono);color:#5e646b;min-height:15px;margin-top:10px;overflow-wrap:anywhere}
+#sapper .df-bars-explainer{font:10px/1.7 var(--df-mono);color:var(--df-muted);max-width:780px;padding:16px 0 26px;margin:0}
+#sapper main>section:not(.live-status){margin-bottom:26px}
+#sapper article.down-active,#sapper article.degraded-active{border-radius:0}
+#sapper footer{font-size:10px;margin-top:28px;padding:20px 0;border-top:1px solid var(--df-line)}
+#sapper .df-foot-top{padding-bottom:22px}
+#sapper .df-foot-title{font-size:32px;letter-spacing:-.055em}
+#sapper .df-help{border-radius:0;background:var(--df-ink);color:white;border:0}
+#sapper .df-help:hover{color:var(--df-ink)}
+#sapper .df-foot-bottom{padding-top:12px}
+#sapper .df-tricolor{width:280px;height:8px}
+@media(max-width:760px){
+ #sapper nav{padding:0 22px;margin:0}
+ #sapper nav .container{padding:18px 0;display:flex;gap:12px;min-height:82px}
+ #sapper nav .logo img{width:154px}
+ #sapper nav ul{margin:0;gap:0}
+ #sapper nav ul a{padding:10px;font-size:12px}
+ #sapper nav ul li:last-child a{padding-inline:12px}
+ #sapper main.container{padding-top:30px}
+ #sapper main>header{display:block;padding-bottom:28px;margin-bottom:24px}
+ #sapper main>header::before{margin-bottom:24px;font-size:9px}
+ #sapper main>header h1{font-size:clamp(42px,10vw,64px);margin-bottom:22px;line-height:1.02}
+ #sapper main>header p.lead{font-size:15px;max-width:460px}
+ #sapper main>.f h2{font-size:25px}
+ #sapper form.r label{padding:10px 6px}
+ #sapper .live-status article.df-has-bars{display:block;padding:21px 0 21px 0}
+ #sapper .live-status article::before{position:static;display:block;margin:0 0 4px;font-size:10px}
+ #sapper .live-status article h4{font-size:20px;max-width:65%;margin-bottom:2px}
+ #sapper .live-status article>.df-service-state{position:absolute;right:0;top:43px;font-size:10px;padding:4px 7px;max-width:34%}
+ #sapper .live-status article>div:not(.df-history){font-size:11px;line-height:1.8}
+ #sapper .live-status .data{font-size:11px}
+ #sapper .df-history{margin-top:16px}
+ #sapper .df-history-head{font-size:9px}
+ #sapper .df-bars{gap:3px}
+ #sapper button.df-bar::before{border-radius:3px;inset:8px 0}
+ #sapper .df-bar-caption{font-size:8px}
+ #sapper .df-bar-detail{font-size:9px;margin-top:8px}
+ #sapper .df-bars-explainer{font-size:9px}
+ #sapper .df-foot-title{font-size:28px}
+ #sapper .df-tricolor{max-width:100%;width:100%;height:6px}
+}
+@media(max-width:450px){#sapper nav .container{display:block}#sapper nav ul{margin-top:10px}#sapper nav ul a{padding-inline:14px}}
+@media(prefers-reduced-motion:reduce){#sapper button.df-bar,#sapper button.df-bar::before{transition:none}}
+/* Explicit hero geometry also keeps static/PDF previews faithful. */
+#sapper main>header{display:block;min-height:245px}
+#sapper main>header h1{max-width:65%}
+#sapper main>header p.lead{position:absolute;right:0;bottom:48px;max-width:30%}
+#sapper .live-status article h4 a{display:block}
+@media(max-width:760px){#sapper main>header{min-height:0}#sapper main>header h1{max-width:100%}#sapper main>header p.lead{position:static;max-width:460px}}
+#sapper .live-status article::before{content:none}
+#sapper .live-status article{padding-left:0}
+#sapper .live-status article h4{position:relative;padding-left:32px}
+#sapper .live-status article h4::before{counter-increment:services;content:counter(services,decimal-leading-zero);position:absolute;left:0;top:5px;font:10px/1.4 var(--df-mono);color:var(--df-muted)}
+#sapper main>header::after{background:linear-gradient(to right,#e52320 0%,#e52320 65%,#ddf56b 65%,#ddf56b 86%,#17191c 86%,#17191c 100%)}
+@media(max-width:760px){#sapper .live-status article h4{padding-left:28px;max-width:65%}#sapper .live-status article>.df-service-state{top:25px}}
+#sapper .live-status article{min-height:144px;padding-top:20px;padding-bottom:20px}
+#sapper .df-help{min-width:260px;justify-content:space-between}
+@media(max-width:760px){#sapper .df-help{min-width:0}#sapper .live-status article.df-has-bars{padding-top:21px;padding-bottom:21px}}
