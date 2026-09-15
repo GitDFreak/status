@@ -1,31 +1,127 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime (https://upptime.js.org) — page de statut publique DataFreak
+# Règles : uniquement des URLs déjà publiques (*.datafreak.fr, sites Webflow,
+# SFTP clients). Jamais d'URL interne *.freaklabs.fr, jamais de chemin porteur
+# de secret (webhooks n8n réels, tokens). La supervision fine (1 min, alertes)
+# reste au blackbox du cluster + Cockpit ; cette page est la vitrine (5 min).
+owner: GitDFreak
+repo: status
+user-agent: GitDFreak-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Site DataFreak
+    url: https://www.datafreak.fr
+  - name: Site FreakLabs
+    url: https://freaklabs.io
+  - name: Webhooks n8n
+    # Chemin volontairement inexistant : n8n répond 404 quand le service est
+    # disponible. Ne jamais sonder un webhook réel (déclencherait le workflow
+    # et publierait son chemin).
+    url: https://n8n.datafreak.fr/webhook/status-probe
+    expectedStatusCodes: [404]
+  - name: CDN assets
+    # Bucket public sans listing : 403 sur la racine = edge + policy répondent.
+    url: https://assets.datafreak.fr/
+    expectedStatusCodes: [403]
+  - name: FAQ (centre d'aide)
+    # Hébergé par Zendesk : redirection vers /hc, 403 possible pour un client
+    # non-navigateur. On valide la chaîne DNS + TLS + front Zendesk.
+    url: https://faq.datafreak.fr
+    expectedStatusCodes: [200, 301, 302, 403]
+  - name: SFTP (dépôt de fichiers)
+    check: "tcp-ping"
+    url: sftp.freaklabs.fr
+    port: 22
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.datafreak.fr
+  logoUrl: https://cdn.prod.website-files.com/68a34db27e193e45ab14a309/690f77b10cc6cca6fec37892_logotype-red.svg
+  name: Statut DataFreak
+  introTitle: "État des services **DataFreak**"
+  introMessage: "Disponibilité et temps de réponse de nos services publics, mesurés toutes les 5 minutes depuis l'extérieur de notre infrastructure. Les incidents sont publiés sur cette page. Besoin d'aide ? [Centre d'aide](https://faq.datafreak.fr) · [Site DataFreak](https://www.datafreak.fr)"
   navbar:
-    - title: Status
+    - title: Statut
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: DataFreak
+      href: https://www.datafreak.fr
+    - title: Centre d'aide
+      href: https://faq.datafreak.fr
+  theme: light
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Métadonnées du dépôt gérées à la main (évite la permission « Administration »
+# sur le token GH_PAT à grain fin).
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
+
+assignees:
+  - Bahmutopi
+
+i18n:
+  # ── Site web ──
+  activeIncidents: Incidents en cours
+  allSystemsOperational: Tous les services sont opérationnels
+  incidentReport: "Rapport d'incident #$NUMBER →"
+  activeIncidentSummary: Ouvert le $DATE, $POSTS mise(s) à jour
+  incidentTitle: Détails de l'incident $NUMBER
+  incidentDetails: Détails de l'incident
+  incidentFixed: Résolu
+  incidentOngoing: En cours
+  incidentOpenedAt: Ouvert le
+  incidentClosedAt: Clos le
+  incidentViewOnGitHub: Voir et s'abonner sur GitHub
+  incidentCommentSummary: Publié le $DATE par $AUTHOR
+  incidentBack: ← Retour à tous les incidents
+  pastIncidents: Incidents passés
+  pastIncidentsResolved: Résolu en $MINUTES minutes, $POSTS mise(s) à jour
+  liveStatus: Statut en direct
+  overallUptime: "Disponibilité globale : $UPTIME"
+  overallUptimeTitle: Disponibilité globale
+  averageResponseTime: "Temps de réponse moyen : $TIMEms"
+  averageResponseTimeTitle: Réponse moyenne
+  sevelDayResponseTime: Temps de réponse sur 7 jours
+  responseTimeMs: Temps de réponse (ms)
+  up: Opérationnel
+  down: Indisponible
+  degraded: Dégradé
+  ms: ms
+  loading: Chargement
+  navGitHub: GitHub
+  footer: "© DataFreak · Cette page est [open source]($REPO), propulsée par [Upptime](https://upptime.js.org)"
+  errorTitle: Une erreur est survenue
+  errorIntro: Impossible de récupérer les dernières informations de statut.
+  errorText: Réessayez dans quelques instants.
+  errorHome: Retour à l'accueil
+  pastScheduledMaintenance: Maintenances planifiées passées
+  scheduledMaintenance: Maintenance planifiée
+  scheduledMaintenanceSummaryStarted: Démarrée le $DATE pour $DURATION minutes
+  scheduledMaintenanceSummaryStarts: Démarre le $DATE pour $DURATION minutes
+  startedAt: Démarrée le
+  startsAt: Démarre le
+  duration: Durée
+  durationMin: $DURATION minutes
+  incidentCompleted: Terminée
+  incidentScheduled: Planifiée
+  duration24H: 24 h
+  duration7D: 7 j
+  duration30D: 30 j
+  duration1Y: 1 an
+  durationAll: tout
+  # ── README ──
+  url: URL
+  status: Statut
+  history: Historique
+  responseTime: Temps de réponse
+  uptime: Disponibilité
+  responseTimeGraphAlt: Graphique du temps de réponse
+  responseTimeDay: Temps de réponse sur 24 h
+  responseTimeWeek: Temps de réponse sur 7 jours
+  responseTimeMonth: Temps de réponse sur 30 jours
+  responseTimeYear: Temps de réponse sur 1 an
+  uptimeDay: Disponibilité sur 24 h
+  uptimeWeek: Disponibilité sur 7 jours
+  uptimeMonth: Disponibilité sur 30 jours
+  uptimeYear: Disponibilité sur 1 an
+  liveStatusHtmlComment: "<!--live status-->"
+  degradedPerformance: 🟨 Performances dégradées
+  completeOutage: 🟥 Panne complète
+  partialOutage: 🟧 Panne partielle
