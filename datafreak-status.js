@@ -1,11 +1,11 @@
-/* DATAFREAK / Upptime v6 — frises de disponibilité pilotées par le sélecteur de période natif.
+/* DATAFREAK / Upptime v7 — frises de disponibilité pilotées par le sélecteur de période natif.
    Données : /status-days.json (précalculé côté serveur par le workflow status-days à partir des
    incidents Upptime), même origine, un seul appel ; aucun appel à api.github.com depuis le
    navigateur. Si le fichier manque, les cartes natives restent intactes.
    Accueil : 24 h = 24 heures · 7 j = 7 jours · 30 j = 30 jours · 1 an / tout = 52 semaines,
    synchronisé avec les radios natives (form.r). Clic sur une cellule = panneau détaillé
    (état, disponibilité, heure par heure ou jours de la semaine, incidents → /incident/<n>).
-   Fiche /history/<slug> : frise fixe des 30 derniers jours. Fond de page « Besoin d'un coup de
+   Fiche /history/<slug> : même frise avec son propre sélecteur de période (24 h par défaut). Fond de page « Besoin d'un coup de
    main ? » injecté ici (customFootHtml absent de @upptime/status-page 1.17.0). */
 (() => {
   'use strict';
@@ -101,10 +101,10 @@
 
   function start(){
     const root=document.getElementById('sapper');
-    if(!root || root.dataset.dfThemeReady==='v6') return;
-    root.dataset.dfThemeReady='v6';document.documentElement.lang='fr';
+    if(!root || root.dataset.dfThemeReady==='v7') return;
+    root.dataset.dfThemeReady='v7';document.documentElement.lang='fr';
     const controls=new WeakMap();let data=null,dataPromise=null,loadedAt=0,scheduled=false;
-    const periodOf=()=>root.querySelector('form.r input[type="radio"]:checked')?.value||'week';
+    const periodOf=()=>root.querySelector('form.r:not(.df-filter) input[type="radio"]:checked')?.value||'week';
 
     function load(force=false){
       if(!force && dataPromise) return dataPromise;
@@ -122,7 +122,7 @@
     }
 
     /** Frise + panneau. host = carte (accueil) ou bloc autonome (fiche). */
-    function makeTimeline(host,slug,site,{badge:withBadge=true,fixedMode=null}={}){
+    function makeTimeline(host,slug,site,{badge:withBadge=true,fixedMode=null,periodFn=null}={}){
       const wrap=el('div','df-history');
       const heading=el('div','df-history-head');const label=el('span');const note=el('span','df-history-note');heading.append(label,note);
       const track=el('div','df-bars');track.setAttribute('role','group');
@@ -132,7 +132,8 @@
       wrap.append(heading,track,caption,detail,panel);host.append(wrap);host.classList.add('df-has-bars');
       let badge=null;
       if(withBadge){badge=host.querySelector('.df-service-state');if(!badge){badge=el('span','df-service-state');host.prepend(badge);}}
-      let buttons=[],slots=[],selected=0,open=null,current=site,mode=fixedMode||periodOf(),count=0;
+      const period=()=>fixedMode||(periodFn?periodFn():periodOf());
+      let buttons=[],slots=[],selected=0,open=null,current=site,mode=period(),count=0;
 
       function select(index,focus=false){
         selected=Math.max(0,Math.min(count-1,index));
@@ -238,7 +239,7 @@
         badge.title='Dernier état publié par Upptime (sonde toutes les 5 minutes).';
       }
       function render(next,nextMode){
-        current=next||current;const newMode=fixedMode||nextMode||mode;
+        current=next||current;const newMode=fixedMode||nextMode||period();
         const m=MODES[newMode]||MODES.month;
         const cells=cellsFor(current,newMode);
         const n=m.kind==='hour'?24:m.count;
@@ -295,15 +296,23 @@
           const summary=main.querySelector(':scope > section');
           if(!summary || !summary.querySelector('h1')) return;
           block=el('section','df-detail');block.dataset.slug=routeSlug;
-          block.append(el('h2',null,'Les 30 derniers jours'));
-          summary.after(block);
-          makeTimeline(block,routeSlug,data.sites[routeSlug],{badge:false,fixedMode:'month'});
+          const head=el('div','f df-detail-head');head.append(el('h2',null,'Disponibilité'));
+          // Sélecteur de période propre à la fiche (même rendu que celui de l'accueil) ; 24 h par défaut
+          const form=el('form','r df-filter');form.setAttribute('aria-label','Période de la frise de disponibilité');
+          [['day','24 h'],['week','7 j'],['month','30 j'],['year','1 an'],['all','tout']].forEach(([v,t],i)=>{
+            const box=el('div');const input=el('input');input.type='radio';input.name='df_period';input.value=v;input.id=`df_period_${v}`;input.checked=i===0;
+            const lab=el('label',null,t);lab.htmlFor=input.id;box.append(input,lab);form.append(box);
+          });
+          head.append(form);block.append(head);summary.after(block);
+          const periodFn=()=>form.querySelector('input:checked')?.value||'day';
+          makeTimeline(block,routeSlug,data.sites[routeSlug],{badge:false,periodFn});
+          form.addEventListener('change',()=>controls.get(block)?.render(data.sites[routeSlug],periodFn()));
         } else if(controls.has(block)){controls.get(block).render(data.sites[routeSlug]);}
       }
     }
 
     // Sélecteur de période natif → frises
-    root.addEventListener('change',event=>{if(event.target?.matches?.('form.r input[type="radio"]'))enhance();});
+    root.addEventListener('change',event=>{if(event.target?.matches?.('form.r:not(.df-filter) input[type="radio"]'))enhance();});
     const observer=new MutationObserver(mutations=>{
       if(!mutations.some(m=>!m.target.closest?.('.df-history,.df-service-state,.df-detail,.df-bars-explainer')) || scheduled)return;
       scheduled=true;requestAnimationFrame(()=>{scheduled=false;enhance();});
