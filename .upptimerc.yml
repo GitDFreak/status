@@ -51,9 +51,9 @@ status-website:
   # côté navigateur. Bumper ?v= à chaque modification des fichiers assets/.
   links:
     - rel: stylesheet
-      href: https://status.datafreak.fr/datafreak-status.css?v=6
+      href: https://status.datafreak.fr/datafreak-status.css?v=7
   scripts:
-    - src: https://status.datafreak.fr/datafreak-status.js?v=6
+    - src: https://status.datafreak.fr/datafreak-status.js?v=7
       async: true
   customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
   # customFootHtml : non supporté par @upptime/status-page 1.17.0 (paquet npm utilisé par le

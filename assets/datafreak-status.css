@@ -313,3 +313,9 @@ body{padding:0;margin:0;background:#fff;color:var(--df-ink);font-family:'DF Robo
  #sapper .df-bars[data-count="52"]{gap:1px}
  #sapper .df-bars[data-count="7"]{gap:5px}
 }
+
+/* V7 — fiche : titre + sélecteur de période, même rendu que l'accueil */
+#sapper .df-detail-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+#sapper .df-detail-head h2{margin:0}
+#sapper section.df-detail form.df-filter{margin:0}
+@media(max-width:760px){#sapper .df-detail-head{align-items:stretch}#sapper section.df-detail form.df-filter{width:100%}}
