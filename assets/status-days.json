@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T20:13:42.696Z",
+ "generatedAt": "2026-09-15T20:29:49.719Z",
  "timeZone": "Europe/Paris",
  "days": 30,
  "sites": {
@@ -124,6 +124,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -131,7 +132,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   },
   "faq-centre-d-aide": {
    "url": "https://faq.datafreak.fr",
@@ -254,6 +256,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -261,7 +264,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   },
   "sftp-depot-de-fichiers": {
    "url": "sftp.freaklabs.fr",
@@ -384,6 +388,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -391,7 +396,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   },
   "site-data-freak": {
    "url": "https://www.datafreak.fr",
@@ -514,6 +520,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -521,7 +528,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   },
   "site-freak-labs": {
    "url": "https://freaklabs.io",
@@ -644,6 +652,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -651,7 +660,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   },
   "webhooks-n8n": {
    "url": "https://n8n.datafreak.fr/webhook/status-probe",
@@ -774,6 +784,7 @@
      "state": "none"
     },
     {
+     "hours": "nnnnnnnnnnnnnnnnnnnnuuun",
      "date": "2026-09-15",
      "state": "up",
      "down": 0,
@@ -781,7 +792,8 @@
      "uptime": 100,
      "partial": true
     }
-   ]
+   ],
+   "incidents": []
   }
  }
 }

@@ -12,6 +12,11 @@
  * minutes d'indisponibilité / de dégradation, `none` avant le début de la supervision
  * (`startTime`), `partial` pour le premier jour incomplet.
  *
+ * Chaque jour couvert porte aussi `hours` : une lettre par heure civile du jour (23/24/25 en DST),
+ * u = opérationnel, g = dégradé, d = indisponible, n = hors supervision / futur.
+ * Chaque service porte `incidents` : les incidents chevauchant la fenêtre (numéro, titre,
+ * sévérité, début, fin) pour afficher le détail d'un jour sans appel API côté navigateur.
+ *
  * Sortie : assets/status-days.json (servi tel quel à /status-days.json par Upptime).
  * Aucune dépendance npm (Node ≥ 20). `--test` exécute des cas synthétiques et sort.
  */
@@ -76,6 +81,16 @@ const overlapMin = (a1, a2, b1, b2) => Math.max(0, (Math.min(a2, b2) - Math.max(
  * @param {Array} issues            issues GitHub (state=all) du slug
  * @param {Date} now
  */
+/** Incidents (fenêtres) chevauchant les N derniers jours, pour le détail côté navigateur. */
+export const listIncidents = (issues, now = new Date()) => {
+  const first = parisMidnight(lastDays(now)[0]).getTime();
+  return issues
+    .map((i) => ({ sev: severityOf(i), from: new Date(i.created_at), to: i.closed_at ? new Date(i.closed_at) : null, number: i.number, title: i.title || "" }))
+    .filter((w) => w.sev && !Number.isNaN(w.from.getTime()) && (w.to ? w.to.getTime() : now.getTime()) >= first)
+    .sort((a, b) => b.from - a.from)
+    .map((w) => ({ number: w.number, title: w.title.replace(/^[^\p{L}\p{N}]+/u, "").trim(), severity: w.sev, start: w.from.toISOString(), end: w.to ? w.to.toISOString() : null }));
+};
+
 export const computeDays = (site, issues, now = new Date()) => {
   const start = site.startTime ? new Date(site.startTime) : null;
   const windows = issues
@@ -97,7 +112,18 @@ export const computeDays = (site, issues, now = new Date()) => {
       if (w.sev === "down") down += m; else degraded += m;
     }
     const covered = (to - from) / 60000;
+    // Heures civiles du jour : bornes successives par pas d'1 h depuis minuit Paris jusqu'à minuit suivant
+    let hours = "";
+    for (let h0 = d0.getTime(); h0 < dayEnd.getTime(); h0 += 3600000) {
+      const h1 = Math.min(h0 + 3600000, dayEnd.getTime());
+      const hf = Math.max(h0, from.getTime()), ht = Math.min(h1, to.getTime());
+      if (ht <= hf) { hours += "n"; continue; }
+      let hd = 0, hg = 0;
+      for (const w of windows) { const m = overlapMin(hf, ht, w.from.getTime(), w.to.getTime()); if (m > 0) { if (w.sev === "down") hd += m; else hg += m; } }
+      hours += hd > 0 ? "d" : hg > 0 ? "g" : "u";
+    }
     const day = {
+      hours,
       date: ymd,
       state: down > 0 ? "down" : degraded > 0 ? "degraded" : "up",
       down: Math.round(down),
@@ -139,7 +165,7 @@ const main = async () => {
     const slug = f.replace(/\.yml$/, "");
     const site = parseHistory(await readFile(join("history", f), "utf8"));
     const issues = await issuesFor(slug);
-    sites[slug] = { url: site.url, startTime: site.startTime, days: computeDays(site, issues, now) };
+    sites[slug] = { url: site.url, startTime: site.startTime, days: computeDays(site, issues, now), incidents: listIncidents(issues, now) };
     console.log(`${slug}: ${issues.length} incident(s), ${sites[slug].days.filter((d) => d.state !== "none").length}/${DAYS} jour(s) couverts`);
   }
   const out = { generatedAt: now.toISOString(), timeZone: TZ, days: DAYS, sites };
@@ -170,11 +196,16 @@ const test = () => {
   assert(by["2026-09-14"].state === "down" && by["2026-09-14"].down === 10 && by["2026-09-14"].degraded === 30, "dégradé + down le même jour → down, minutes séparées");
   assert(by["2026-09-15"].state === "down" && by["2026-09-15"].down === 60 && by["2026-09-15"].partial === true, "incident encore ouvert compté jusqu'à maintenant ; jour en cours partiel");
   assert(by["2026-09-11"].state === "up", "issue maintenance ignorée");
+  assert(by["2026-09-13"].hours.length === 24 && by["2026-09-13"].hours.startsWith("ddd") && by["2026-09-13"].hours.slice(3).replace(/u/g, "") === "", "13 sept. : incident 00:30→02:30 Paris = heures 00, 01, 02 en 'd', le reste 'u'");
+  assert(by["2026-09-10"].hours.startsWith("nnnnnnnnnnnn") && by["2026-09-10"].hours[12] === "u", "premier jour : heures avant 12:30 Paris en 'n'");
+  assert(by["2026-09-15"].hours.slice(22) === "nn" && by["2026-09-15"].hours[21] === "d", "jour en cours : heures futures 'n', 21h Paris = 'd'");
+  const inc = listIncidents(issues, now);
+  assert(inc.length === 4 && inc[0].number === 4 && inc[0].end === null && inc[0].title === "X is down", "liste d'incidents : 4 (maintenance exclue), tri récent d'abord, titre sans emoji, en cours = end null");
   assert(severityOf({ title: "🛑 A is down", labels: [{ name: "status" }] }) === "down" && severityOf({ title: "hello", labels: [{ name: "status" }] }) === null, "sévérité d'après le titre");
   // DST : 25 oct. 2026 (changement d'heure) doit rester un jour de 25 h sans trou
   const dst = computeDays({ startTime: "2026-10-01T00:00:00Z" }, [mk(9, "🛑 X is down", "2026-10-24T22:00:00Z", "2026-10-25T23:00:00Z")], new Date("2026-10-26T12:00:00Z"));
   const d25 = dst.find((d) => d.date === "2026-10-25");
-  assert(d25 && d25.down === 1500 && d25.state === "down", "jour de 25 h (DST) : 1500 min");
+  assert(d25 && d25.down === 1500 && d25.state === "down" && d25.hours.length === 25, "jour de 25 h (DST) : 1500 min, 25 lettres");
 };
 
 if (process.argv.includes("--test")) test();

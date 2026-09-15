@@ -51,9 +51,9 @@ status-website:
   # côté navigateur. Bumper ?v= à chaque modification des fichiers assets/.
   links:
     - rel: stylesheet
-      href: https://status.datafreak.fr/datafreak-status.css?v=3
+      href: https://status.datafreak.fr/datafreak-status.css?v=5
   scripts:
-    - src: https://status.datafreak.fr/datafreak-status.js?v=4
+    - src: https://status.datafreak.fr/datafreak-status.js?v=5
       async: true
   customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
   # customFootHtml : non supporté par @upptime/status-page 1.17.0 (paquet npm utilisé par le
@@ -69,6 +69,8 @@ assignees:
   - Bahmutopi
 
 i18n:
+  # locale : utilisée par Upptime pour formater les dates (Graph, Incidents, History)
+  locale: fr-FR
   # ── Site web ──
   activeIncidents: Incidents en cours
   allSystemsOperational: Aucun incident en cours publié
