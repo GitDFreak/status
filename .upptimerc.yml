@@ -8,26 +8,34 @@ repo: status
 user-agent: GitDFreak-status
 
 sites:
+  # `slug` figé par service : renommer un service ne change ni l'historique, ni l'URL /history/<slug>,
+  # ni les labels d'incidents. Toujours garder le slug quand on retouche un nom.
   - name: Site DataFreak
+    slug: site-data-freak
     url: https://www.datafreak.fr
   - name: Site FreakLabs
+    slug: site-freak-labs
     url: https://freaklabs.io
-  - name: Webhooks n8n
+  - name: Serveur d’automatisation · n8n
+    slug: webhooks-n8n
     # Chemin volontairement inexistant : n8n répond 404 quand le service est
     # disponible. Ne jamais sonder un webhook réel (déclencherait le workflow
     # et publierait son chemin).
     url: https://n8n.datafreak.fr/webhook/status-probe
     expectedStatusCodes: [404]
-  - name: CDN assets
+  - name: Fichiers statiques · CDN
+    slug: cdn-assets
     # Bucket public sans listing : 403 sur la racine = edge + policy répondent.
     url: https://assets.datafreak.fr/
     expectedStatusCodes: [403]
-  - name: FAQ (centre d'aide)
+  - name: Centre d’aide
+    slug: faq-centre-d-aide
     # Hébergé par Zendesk : redirection vers /hc, 403 possible pour un client
     # non-navigateur. On valide la chaîne DNS + TLS + front Zendesk.
     url: https://faq.datafreak.fr
     expectedStatusCodes: [200, 301, 302, 403]
-  - name: SFTP (dépôt de fichiers)
+  - name: Dépôt de fichiers · SFTP
+    slug: sftp-depot-de-fichiers
     check: "tcp-ping"
     url: sftp.freaklabs.fr
     port: 22
@@ -37,7 +45,7 @@ status-website:
   logoUrl: https://cdn.prod.website-files.com/68a34db27e193e45ab14a309/690f77b10cc6cca6fec37892_logotype-red.svg
   name: Statut Datafreak
   introTitle: "Le point sur **vos services.**"
-  introMessage: "Disponibilité, incidents, maintenances. Retrouvez les informations utiles sur les services Datafreak et Freaklabs, au même endroit."
+  introMessage: "Consultez l’état des services DATAFREAK et FREAKLABS, les incidents et les maintenances annoncées."
   navbar:
     - title: Statut
       href: /
@@ -51,9 +59,9 @@ status-website:
   # côté navigateur. Bumper ?v= à chaque modification des fichiers assets/.
   links:
     - rel: stylesheet
-      href: https://status.datafreak.fr/datafreak-status.css?v=7
+      href: https://status.datafreak.fr/datafreak-status.css?v=8
   scripts:
-    - src: https://status.datafreak.fr/datafreak-status.js?v=7
+    - src: https://status.datafreak.fr/datafreak-status.js?v=8
       async: true
   customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
   # customFootHtml : non supporté par @upptime/status-page 1.17.0 (paquet npm utilisé par le
@@ -73,7 +81,7 @@ i18n:
   locale: fr-FR
   # ── Site web ──
   activeIncidents: Incidents en cours
-  allSystemsOperational: Aucun incident en cours publié
+  allSystemsOperational: Aucun incident en cours signalé.
   incidentReport: "Rapport d'incident #$NUMBER →"
   activeIncidentSummary: Ouvert le $DATE, $POSTS mise(s) à jour
   incidentTitle: Détails de l'incident $NUMBER

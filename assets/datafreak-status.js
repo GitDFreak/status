@@ -1,4 +1,4 @@
-/* DATAFREAK / Upptime v7 — frises de disponibilité pilotées par le sélecteur de période natif.
+/* DATAFREAK / Upptime v8 — frises de disponibilité pilotées par le sélecteur de période natif.
    Données : /status-days.json (précalculé côté serveur par le workflow status-days à partir des
    incidents Upptime), même origine, un seul appel ; aucun appel à api.github.com depuis le
    navigateur. Si le fichier manque, les cartes natives restent intactes.
@@ -34,13 +34,20 @@
   const hh=h=>`${String(h).padStart(2,'0')} h`;
 
   // ── Cellules par mode ───────────────────────────────────────────────────────
-  function hourCells(days){
+  function hourCells(days,{live='up',generatedAt=null}={}){
+    // Le fichier est recalculé chaque heure : les heures écoulées depuis sa génération sont
+    // encore 'n'. Elles prennent l'état natif publié par Upptime (sonde 5 min), marqué provisoire ;
+    // un incident ouvert entre-temps relance le calcul en quelques minutes.
     const cells=[];const t=today(),hn=hourNow();
+    const gen=generatedAt?new Date(generatedAt):null;
+    const genDate=gen?ymdFmt.format(gen):null, genHour=gen?Number(new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hour:'2-digit',hourCycle:'h23'}).format(gen)):-1;
     days.slice(-3).forEach(d=>{
-      if(!d.hours) return;
-      d.hours.split('').forEach((c,h)=>{
+      const chars=d.hours?d.hours.split(''):(d.date===t?Array(hn+1).fill('n'):[]);
+      chars.forEach((c,h)=>{
         if(d.date===t && h>hn) return; // heures futures
-        cells.push({kind:'hour',date:d.date,hour:h,state:hourState[c]||'none',day:d});
+        let state=hourState[c]||'none',provisional=false;
+        if(c==='n' && gen && d.state!=='none' && (d.date>genDate || (d.date===genDate && h>=genHour))){state=live;provisional=true;}
+        cells.push({kind:'hour',date:d.date,hour:h,state,provisional,day:d});
       });
     });
     return cells.slice(-24);
@@ -63,16 +70,16 @@
       return w;
     }).slice(-52);
   }
-  function cellsFor(site,mode){
+  function cellsFor(site,mode,opts){
     const days=(site&&site.days)||[];const m=MODES[mode]||MODES.month;
-    if(m.kind==='hour') return hourCells(days);
+    if(m.kind==='hour') return hourCells(days,opts);
     if(m.kind==='week') return weekCells(days);
     return days.slice(-m.count);
   }
   function describe(c){
     if(!c) return 'Aucune donnée pour cette position';
     if(c.kind==='hour'){
-      return `${cap(longFmt.format(dayDate(c.date)))}, ${hh(c.hour)} – ${hh(c.hour+1)} · ${labels[c.state]}`;
+      return `${cap(longFmt.format(dayDate(c.date)))}, ${hh(c.hour)} – ${hh(c.hour+1)} · ${labels[c.state]}${c.provisional?' (provisoire : état en direct, calcul horaire à venir)':''}`;
     }
     if(c.kind==='week'){
       const when=`Semaine du ${dayFmt.format(dayDate(c.date))} au ${dayFmt.format(dayDate(c.dateEnd))}`;
@@ -101,8 +108,8 @@
 
   function start(){
     const root=document.getElementById('sapper');
-    if(!root || root.dataset.dfThemeReady==='v7') return;
-    root.dataset.dfThemeReady='v7';document.documentElement.lang='fr';
+    if(!root || root.dataset.dfThemeReady==='v8') return;
+    root.dataset.dfThemeReady='v8';document.documentElement.lang='fr';
     const controls=new WeakMap();let data=null,dataPromise=null,loadedAt=0,scheduled=false;
     const periodOf=()=>root.querySelector('form.r:not(.df-filter) input[type="radio"]:checked')?.value||'week';
 
@@ -241,25 +248,27 @@
       function render(next,nextMode){
         current=next||current;const newMode=fixedMode||nextMode||period();
         const m=MODES[newMode]||MODES.month;
-        const cells=cellsFor(current,newMode);
+        const liveEl=withBadge?host:root.querySelector('main.container > section h1 .tag');
+        const live=liveEl?(liveEl.classList.contains('down')?'down':liveEl.classList.contains('degraded')?'degraded':'up'):'up';
+        const cells=cellsFor(current,newMode,{live,generatedAt:data?.generatedAt});
         const n=m.kind==='hour'?24:m.count;
         if(newMode!==mode||n!==count){mode=newMode;buildButtons(n);}
         slots=[...Array(Math.max(0,n-cells.length)).fill(null),...cells.slice(-n)];
-        buttons.forEach((b,i)=>{const c=slots[i];b.dataset.state=c?(c.state==='none'?'unknown':c.state):'unknown';b.setAttribute('aria-label',describe(c));});
+        buttons.forEach((b,i)=>{const c=slots[i];b.dataset.state=c?(c.state==='none'?'unknown':c.state):'unknown';b.dataset.provisional=String(!!(c&&c.provisional));b.setAttribute('aria-label',describe(c));});
         label.textContent=m.head;capL.textContent=m.left;capR.textContent=m.right;
         track.setAttribute('aria-label',`${m.head}. Flèches gauche et droite pour parcourir, Entrée pour ouvrir le détail.`);
         const covered=slots.filter(c=>c&&c.state!=='none');
         const firstDay=(current.days||[]).find(d=>d.state!=='none');
         if(!firstDay) note.textContent='En attente de données';
         else if(m.kind==='hour') note.textContent=data?.generatedAt?`Mis à jour à ${timeFmt.format(new Date(data.generatedAt))}`:'';
-        else if(covered.length<n) note.textContent=`Supervisé depuis le ${dayFmt.format(dayDate(firstDay.date))}`;
+        else if(covered.length<n) note.textContent=`Suivi depuis le ${dayFmt.format(dayDate(firstDay.date))}`;
         else note.textContent=m.kind==='week'?`${n} semaines complètes`:`${n} jours complets`;
         select(selected);if(open!=null)renderPanel();
       }
       controls.set(host,{freshness,render});freshness();render(site,mode);
     }
 
-    const FOOT='<aside class="df-foot" aria-label="Aide et liens utiles"><div class="df-foot-top"><div><div class="df-foot-title">Besoin d’un coup de main ?</div><p>Un accès bloqué, une question : consultez le centre d’aide.</p></div><a class="df-help" href="https://faq.datafreak.fr">Accéder au centre d’aide <span aria-hidden="true">↗</span></a></div><div class="df-foot-bottom"><div class="df-foot-links"><a href="https://www.datafreak.fr/">DATAFREAK ↗</a><a href="https://freaklabs.io/">FREAKLABS ↗</a></div><span class="df-tricolor" aria-hidden="true"><i></i><i></i><i></i></span></div></aside>';
+    const FOOT='<aside class="df-foot" aria-label="Aide et liens utiles"><div class="df-foot-top"><div><div class="df-foot-title">Besoin d’un coup de main ?</div><p>Un problème persiste ? Consultez le centre d’aide.</p></div><a class="df-help" href="https://faq.datafreak.fr">Accéder au centre d’aide <span aria-hidden="true">↗</span></a></div><div class="df-foot-bottom"><div class="df-foot-links"><a href="https://www.datafreak.fr/">DATAFREAK ↗</a><a href="https://freaklabs.io/">FREAKLABS ↗</a></div><span class="df-tricolor" aria-hidden="true"><i></i><i></i><i></i></span></div></aside>';
     function foot(){
       const footer=root.querySelector('footer');
       if(!footer || root.querySelector('.df-foot')) return;
