@@ -319,3 +319,7 @@ body{padding:0;margin:0;background:#fff;color:var(--df-ink);font-family:'DF Robo
 #sapper .df-detail-head h2{margin:0}
 #sapper section.df-detail form.df-filter{margin:0}
 @media(max-width:760px){#sapper .df-detail-head{align-items:stretch}#sapper section.df-detail form.df-filter{width:100%}}
+
+/* V8 — badge du résumé (fiche) : neutralise l'espacement négatif hérité du h1 ; heures provisoires */
+#sapper main>section h1 .tag{display:inline-block;letter-spacing:0;font:500 12px/1.4 'DF Roboto',Arial,sans-serif;padding:5px 10px;border-radius:20px;margin:0 0 0 14px;vertical-align:middle;white-space:nowrap}
+#sapper button.df-bar[data-provisional="true"]::before{opacity:.55;background-image:repeating-linear-gradient(135deg,transparent 0 4px,rgba(255,255,255,.55) 4px 7px)}
