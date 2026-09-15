@@ -1,13 +1,13 @@
 # Barres « 1 jour = 1 barre » du thème Datafreak : précalcule assets/status-days.json
 # à partir des incidents Upptime (issues), puis relance Static Site CI.
-# Les couleurs ne peuvent changer qu'au passage de minuit (Paris) ou sur un événement
-# d'incident : ce sont les seuls déclencheurs (jamais `push`, pour ne pas s'auto-déclencher).
+# Déclencheurs : toutes les heures (la frise « heure par heure » du jour en cours avance,
+# le commit n'a lieu que si le JSON change), à chaque événement d'incident, à la main.
+# Jamais `push` (auto-déclenchement). Dépôt public : minutes Actions gratuites.
 # Workflow custom : le mécanisme update-template d'Upptime ne supprime que ses propres fichiers.
 name: Status Days
 on:
   schedule:
-    - cron: "5 22 * * *" # 00:05 Paris (heure d'été)
-    - cron: "5 23 * * *" # 00:05 Paris (heure d'hiver) — l'autre run est un no-op
+    - cron: "5 * * * *" # chaque heure (couvre aussi le passage de minuit Paris)
   issues:
     types: [opened, closed, reopened, labeled, edited]
   workflow_dispatch:
