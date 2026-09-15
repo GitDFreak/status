@@ -323,3 +323,33 @@ body{padding:0;margin:0;background:#fff;color:var(--df-ink);font-family:'DF Robo
 /* V8 — badge du résumé (fiche) : neutralise l'espacement négatif hérité du h1 ; heures provisoires */
 #sapper main>section h1 .tag{display:inline-block;letter-spacing:0;font:500 12px/1.4 'DF Roboto',Arial,sans-serif;padding:5px 10px;border-radius:20px;margin:0 0 0 14px;vertical-align:middle;white-space:nowrap}
 #sapper button.df-bar[data-provisional="true"]::before{opacity:.55;background-image:repeating-linear-gradient(135deg,transparent 0 4px,rgba(255,255,255,.55) 4px 7px)}
+
+/* V9 — recommandations UX : bandeau daté, « Suivi depuis », filtre sans « tout », fiche restructurée */
+#sapper .df-hidden{display:none!important}
+#sapper main>article.up .df-banner-date,#sapper main>article.down .df-banner-date,#sapper main>article.degraded .df-banner-date{margin-top:6px;font:10px/1.6 var(--df-mono);color:var(--df-muted);font-weight:400}
+#sapper .live-status article>.df-since{grid-column:1;font:10px/1.6 var(--df-mono);color:var(--df-muted);margin-top:4px}
+#sapper .live-status article.df-has-bars{grid-template-rows:auto auto auto auto auto}
+#sapper .df-bar-caption{font-size:10px;color:#5e646b}
+/* Fiche : retour, titre, lien externe, badge identique à l'accueil, indicateurs empilés */
+#sapper main>section .df-back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px;font:11px/1.5 var(--df-mono);letter-spacing:.04em;text-decoration:none;color:var(--df-muted)}
+#sapper main>section .df-back:hover{color:var(--df-ink);text-decoration:underline}
+#sapper main>section h1{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;font-size:clamp(36px,5vw,60px);letter-spacing:-.05em;margin:0 0 14px}
+#sapper main>section h1 .df-title{min-width:0;overflow-wrap:anywhere}
+#sapper main>section h1 .tag{display:inline-flex;align-items:center;gap:6px;letter-spacing:0;font:500 11px/1.5 'DF Roboto',Arial,sans-serif;padding:3px 9px;border-radius:20px;margin:0;vertical-align:middle;white-space:nowrap;background:#dff7e9!important;color:#165b39!important}
+#sapper main>section h1 .tag::before{content:'';width:6px;height:6px;border-radius:100%;background:currentColor}
+#sapper main>section h1 .tag.down{background:#ffe7e3!important;color:#a21e1b!important}
+#sapper main>section h1 .tag.degraded{background:#fff0ca!important;color:#805300!important}
+#sapper main>section .df-open{display:inline-flex;align-items:center;min-height:36px;margin:0 0 22px;padding:0 12px;border:1px solid var(--df-line);border-radius:4px;font-size:13px;font-weight:500;text-decoration:none}
+#sapper main>section .df-open:hover{background:var(--df-lime);border-color:var(--df-lime)}
+#sapper main>section dl,#sapper dl.df-stats{display:grid;grid-auto-flow:column;grid-template-rows:auto auto;grid-auto-columns:minmax(0,1fr);gap:4px 32px;margin:0;padding:18px 0 0;border-top:1px solid var(--df-line)}
+#sapper main>section dt,#sapper dl.df-stats dt{font-size:12px;color:var(--df-muted);letter-spacing:0}
+#sapper main>section dd,#sapper dl.df-stats dd{margin:0;font:500 22px/1.2 var(--df-mono);color:var(--df-ink);letter-spacing:-.02em}
+#sapper dl.df-stats{border-top:0;padding:0 0 22px;margin-bottom:6px;border-bottom:1px solid var(--df-line)}
+#sapper section.df-detail{border-top:2px solid var(--df-ink);padding-top:22px}
+#sapper footer{margin-top:0;padding-top:16px;border-top:0}
+#sapper .df-foot{padding-bottom:8px}
+@media(max-width:760px){
+ #sapper main>section h1{font-size:clamp(32px,9vw,44px)}
+ #sapper main>section dl,#sapper dl.df-stats{grid-auto-flow:row;grid-template-rows:none;grid-template-columns:1fr;gap:10px}
+ #sapper main>section dd,#sapper dl.df-stats dd{margin-bottom:8px}
+}

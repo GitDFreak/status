@@ -59,13 +59,17 @@ status-website:
   # côté navigateur. Bumper ?v= à chaque modification des fichiers assets/.
   links:
     - rel: stylesheet
-      href: https://status.datafreak.fr/datafreak-status.css?v=8
+      href: https://status.datafreak.fr/datafreak-status.css?v=9
   scripts:
-    - src: https://status.datafreak.fr/datafreak-status.js?v=8
+    - src: https://status.datafreak.fr/datafreak-status.js?v=9
       async: true
   customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
   # customFootHtml : non supporté par @upptime/status-page 1.17.0 (paquet npm utilisé par le
   # build) ; le pied de page « Besoin d’un coup de main ? » est injecté par datafreak-status.js.
+
+# Courbe de temps de réponse (fiche) : couleurs de la charte (encre / citron)
+graphBorderColor: "#17191c"
+graphBackgroundColor: "#ddf56b"
 
 # Métadonnées du dépôt gérées à la main (évite la permission « Administration »
 # sur le token GH_PAT à grain fin).
@@ -96,11 +100,11 @@ i18n:
   pastIncidents: Incidents passés
   pastIncidentsResolved: Résolu en $MINUTES minutes, $POSTS mise(s) à jour
   liveStatus: Service par service.
-  overallUptime: "Disponibilité : $UPTIME"
-  overallUptimeTitle: Disponibilité globale
-  averageResponseTime: "Temps de réponse moyen : $TIMEms"
-  averageResponseTimeTitle: Réponse moyenne
-  sevelDayResponseTime: Temps de réponse sur 7 jours
+  overallUptime: "Disponibilité sur la période : $UPTIME"
+  overallUptimeTitle: Disponibilité depuis le début du suivi
+  averageResponseTime: "Réponse moyenne : $TIMEms"
+  averageResponseTimeTitle: Réponse moyenne depuis le début du suivi
+  sevelDayResponseTime: Temps de réponse sur 7 jours (ms)
   responseTimeMs: Temps de réponse (ms)
   up: Opérationnel
   down: Indisponible

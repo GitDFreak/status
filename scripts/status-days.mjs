@@ -17,6 +17,9 @@
  * Chaque service porte `incidents` : les incidents chevauchant la fenêtre (numéro, titre,
  * sévérité, début, fin) pour afficher le détail d'un jour sans appel API côté navigateur.
  *
+ * Chaque service porte `stats` : les chiffres natifs d'Upptime (history/summary.json : disponibilité
+ * et temps de réponse moyen par période) pour les afficher sur la fiche sans appel externe.
+ *
  * Sortie : assets/status-days.json (servi tel quel à /status-days.json par Upptime).
  * Aucune dépendance npm (Node ≥ 20). `--test` exécute des cas synthétiques et sort.
  */
@@ -163,12 +166,17 @@ const issuesFor = async (slug) => {
 const main = async () => {
   const now = new Date();
   const files = (await readdir("history")).filter((f) => f.endsWith(".yml"));
+  let summary = [];
+  try { summary = JSON.parse(await readFile(join("history", "summary.json"), "utf8")); } catch { console.log("history/summary.json absent : pas de stats"); }
+  const statKeys = ["uptime", "uptimeDay", "uptimeWeek", "uptimeMonth", "uptimeYear", "time", "timeDay", "timeWeek", "timeMonth", "timeYear"];
   const sites = {};
   for (const f of files) {
     const slug = f.replace(/\.yml$/, "");
     const site = parseHistory(await readFile(join("history", f), "utf8"));
     const issues = await issuesFor(slug);
-    sites[slug] = { url: site.url, startTime: site.startTime, days: computeDays(site, issues, now), incidents: listIncidents(issues, now) };
+    const st = summary.find((x) => x.slug === slug);
+    const stats = st ? Object.fromEntries(statKeys.filter((k) => st[k] !== undefined).map((k) => [k, st[k]])) : undefined;
+    sites[slug] = { name: st?.name, url: site.url, startTime: site.startTime, stats, days: computeDays(site, issues, now), incidents: listIncidents(issues, now) };
     console.log(`${slug}: ${issues.length} incident(s), ${sites[slug].days.filter((d) => d.state !== "none").length}/${DAYS} jour(s) couverts`);
   }
   const out = { generatedAt: now.toISOString(), timeZone: TZ, days: DAYS, sites };
