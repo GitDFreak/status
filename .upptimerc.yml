@@ -53,10 +53,11 @@ status-website:
     - rel: stylesheet
       href: https://status.datafreak.fr/datafreak-status.css?v=3
   scripts:
-    - src: https://status.datafreak.fr/datafreak-status.js?v=3
+    - src: https://status.datafreak.fr/datafreak-status.js?v=4
       async: true
   customBodyHtml: '<a class="df-skip" href="#df-main">Aller au contenu</a>'
-  customFootHtml: '<aside class="df-foot" aria-label="Aide et liens utiles"> <div class="df-foot-top"> <div><div class="df-foot-title">Besoin d’un coup de main ?</div> <p>Un accès bloqué, une question : consultez le centre d’aide.</p></div> <a class="df-help" href="https://faq.datafreak.fr">Accéder au centre d’aide <span aria-hidden="true">↗</span></a> </div> <div class="df-foot-bottom"> <div class="df-foot-links"> <a href="https://www.datafreak.fr/">DATAFREAK ↗</a> <a href="https://freaklabs.io/">FREAKLABS ↗</a> </div> <span class="df-tricolor" aria-hidden="true"><i></i><i></i><i></i></span> </div> </aside>'
+  # customFootHtml : non supporté par @upptime/status-page 1.17.0 (paquet npm utilisé par le
+  # build) ; le pied de page « Besoin d’un coup de main ? » est injecté par datafreak-status.js.
 
 # Métadonnées du dépôt gérées à la main (évite la permission « Administration »
 # sur le token GH_PAT à grain fin).

@@ -1,8 +1,10 @@
-/* DATAFREAK / Upptime v3 — barres « 1 barre = 1 jour civil (Europe/Paris), 30 derniers jours ».
+/* DATAFREAK / Upptime v4 — barres « 1 barre = 1 jour civil (Europe/Paris), 30 derniers jours ».
    Données : /status-days.json, précalculé côté serveur (workflow status-days) à partir des
    incidents Upptime (issues), même origine, un seul appel. Aucun appel à api.github.com
    depuis le navigateur. Si le fichier est indisponible, les cartes natives restent intactes.
-   Rendu, classes CSS, clavier et accessibilité : identiques au thème v2. */
+   Rendu, classes CSS, clavier et accessibilité : identiques au thème v2.
+   Pied de page « Besoin d'un coup de main ? » injecté ici : le paquet npm @upptime/status-page
+   1.17.0 utilisé par le build ne connaît pas encore `customFootHtml` (ajouté en 2025 sur master). */
 (() => {
   'use strict';
   const COUNT=30, DATA_URL='/status-days.json', REFRESH_MS=600000;
@@ -25,8 +27,8 @@
 
   function start(){
     const root=document.getElementById('sapper');
-    if(!root || root.dataset.dfThemeReady==='v3') return;
-    root.dataset.dfThemeReady='v3';document.documentElement.lang='fr';
+    if(!root || root.dataset.dfThemeReady==='v4') return;
+    root.dataset.dfThemeReady='v4';document.documentElement.lang='fr';
     const controls=new WeakMap();let data=null,dataPromise=null,loadedAt=0,scheduled=false;
 
     function load(force=false){
@@ -96,7 +98,14 @@
       controls.set(card,{freshness,render});freshness();render(site);
     }
 
+    const FOOT='<aside class="df-foot" aria-label="Aide et liens utiles"><div class="df-foot-top"><div><div class="df-foot-title">Besoin d’un coup de main ?</div><p>Un accès bloqué, une question : consultez le centre d’aide.</p></div><a class="df-help" href="https://faq.datafreak.fr">Accéder au centre d’aide <span aria-hidden="true">↗</span></a></div><div class="df-foot-bottom"><div class="df-foot-links"><a href="https://www.datafreak.fr/">DATAFREAK ↗</a><a href="https://freaklabs.io/">FREAKLABS ↗</a></div><span class="df-tricolor" aria-hidden="true"><i></i><i></i><i></i></span></div></aside>';
+    function foot(){
+      const footer=root.querySelector('footer');
+      if(!footer || root.querySelector('.df-foot')) return;
+      const tpl=document.createElement('template');tpl.innerHTML=FOOT;footer.after(tpl.content.firstElementChild);
+    }
     function enhance(){
+      foot();
       const main=root.querySelector('main.container');if(main){main.id='df-main';main.tabIndex=-1;}
       root.querySelectorAll('form.r').forEach(f=>f.setAttribute('aria-label','Période des statistiques chiffrées ; les barres montrent toujours les 30 derniers jours'));
       const services=root.querySelector('.live-status');
