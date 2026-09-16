@@ -7,7 +7,9 @@
 name: Status Days
 on:
   schedule:
-    - cron: "5 * * * *" # chaque heure (couvre aussi le passage de minuit Paris)
+    - cron: "5 * * * *" # filet : le planificateur GitHub est best effort (retards de 45 min observés)
+  repository_dispatch:
+    types: [status-days] # déclenché chaque heure (minute 05) par le Serverless Job Scaleway status-uptime-dispatch
   issues:
     types: [opened, closed, reopened, labeled, edited]
   workflow_dispatch:
