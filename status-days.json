@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-16T21:02:19.307Z",
+ "generatedAt": "2026-09-16T22:03:46.993Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -20,10 +20,6 @@
     "timeYear": 1119
    },
    "days": [
-    {
-     "date": "2025-09-17",
-     "state": "none"
-    },
     {
      "date": "2025-09-18",
      "state": "none"
@@ -1487,7 +1483,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1511,10 +1515,6 @@
    },
    "days": [
     {
-     "date": "2025-09-17",
-     "state": "none"
-    },
-    {
      "date": "2025-09-18",
      "state": "none"
     },
@@ -2977,7 +2977,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3001,10 +3009,6 @@
    },
    "days": [
     {
-     "date": "2025-09-17",
-     "state": "none"
-    },
-    {
      "date": "2025-09-18",
      "state": "none"
     },
@@ -4467,7 +4471,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -4491,10 +4503,6 @@
    },
    "days": [
     {
-     "date": "2025-09-17",
-     "state": "none"
-    },
-    {
      "date": "2025-09-18",
      "state": "none"
     },
@@ -5957,7 +5965,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -5981,10 +5997,6 @@
    },
    "days": [
     {
-     "date": "2025-09-17",
-     "state": "none"
-    },
-    {
      "date": "2025-09-18",
      "state": "none"
     },
@@ -7447,7 +7459,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -7471,10 +7491,6 @@
    },
    "days": [
     {
-     "date": "2025-09-17",
-     "state": "none"
-    },
-    {
      "date": "2025-09-18",
      "state": "none"
     },
@@ -8937,7 +8953,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-09-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
