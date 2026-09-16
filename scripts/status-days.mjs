@@ -165,6 +165,18 @@ const issuesFor = async (slug) => {
 
 const main = async () => {
   const now = new Date();
+  // Idempotence horaire : le Job Scaleway peut déclencher deux fois en début d'heure (cycles :00 et :05,
+  // gigue de démarrage). Sans STATUS_FORCE=1 (événement d'incident, lancement manuel), on ne recalcule
+  // pas si le fichier courant date de la même heure UTC.
+  if (process.env.STATUS_FORCE !== "1") {
+    try {
+      const prev = JSON.parse(await readFile(OUT, "utf8"));
+      if (prev.generatedAt && prev.generatedAt.slice(0, 13) === now.toISOString().slice(0, 13)) {
+        console.log(`déjà calculé pour l'heure ${now.toISOString().slice(0, 13)}Z (${prev.generatedAt}) : rien à faire`);
+        return;
+      }
+    } catch { /* pas de fichier : on calcule */ }
+  }
   const files = (await readdir("history")).filter((f) => f.endsWith(".yml"));
   let summary = [];
   try { summary = JSON.parse(await readFile(join("history", "summary.json"), "utf8")); } catch { console.log("history/summary.json absent : pas de stats"); }

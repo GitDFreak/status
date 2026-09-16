@@ -35,6 +35,8 @@ jobs:
       - name: Calcul des jours
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # incident ou lancement manuel : recalcul forcé ; déclenchement horaire : idempotent par heure UTC
+          STATUS_FORCE: ${{ (github.event_name == 'issues' || github.event_name == 'workflow_dispatch') && '1' || '0' }}
         run: node scripts/status-days.mjs
       - name: Commit si changement
         id: commit
