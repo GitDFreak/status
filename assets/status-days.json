@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-20T16:02:37.478Z",
+ "generatedAt": "2026-09-20T17:04:27.418Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -1500,7 +1500,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -3003,7 +3003,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -4506,7 +4506,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -6009,7 +6009,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -7512,7 +7512,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -9015,7 +9015,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
