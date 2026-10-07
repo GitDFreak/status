@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T07:03:05.226Z",
+ "generatedAt": "2026-10-07T07:54:35.045Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -6209,15 +6209,26 @@
     },
     {
      "date": "2026-10-07",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 2,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuunnnnnnnnnnnnnn",
-     "partial": true
+     "uptime": 99.64,
+     "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
+     "partial": true,
+     "incidents": [
+      1
+     ]
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 1,
+     "title": "Site DataFreak is down",
+     "severity": "down",
+     "start": "2026-10-07T07:52:28.000Z",
+     "end": null
+    }
+   ]
   },
   "site-freak-labs": {
    "name": "Site FreakLabs",
@@ -7763,15 +7774,26 @@
     },
     {
      "date": "2026-10-07",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuunnnnnnnnnnnnnn",
-     "partial": true
+     "uptime": 99.9,
+     "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
+     "partial": true,
+     "incidents": [
+      2
+     ]
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 2,
+     "title": "Site FreakLabs is down",
+     "severity": "down",
+     "start": "2026-10-07T07:54:01.000Z",
+     "end": null
+    }
+   ]
   },
   "webhooks-n8n": {
    "name": "Serveur d’automatisation · n8n",
