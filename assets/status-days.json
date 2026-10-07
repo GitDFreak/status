@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T07:52:42.092Z",
+ "generatedAt": "2026-10-07T07:52:55.841Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -6212,7 +6212,7 @@
      "state": "down",
      "down": 0,
      "degraded": 0,
-     "uptime": 99.96,
+     "uptime": 99.92,
      "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
