@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T07:03:05.226Z",
+ "generatedAt": "2026-10-07T07:52:42.092Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -6209,15 +6209,26 @@
     },
     {
      "date": "2026-10-07",
-     "state": "up",
+     "state": "down",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuunnnnnnnnnnnnnn",
-     "partial": true
+     "uptime": 99.96,
+     "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
+     "partial": true,
+     "incidents": [
+      1
+     ]
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 1,
+     "title": "Site DataFreak is down",
+     "severity": "down",
+     "start": "2026-10-07T07:52:28.000Z",
+     "end": null
+    }
+   ]
   },
   "site-freak-labs": {
    "name": "Site FreakLabs",
