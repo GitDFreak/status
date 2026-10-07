@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T07:52:55.841Z",
+ "generatedAt": "2026-10-07T07:54:15.651Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -6210,9 +6210,9 @@
     {
      "date": "2026-10-07",
      "state": "down",
-     "down": 0,
+     "down": 2,
      "degraded": 0,
-     "uptime": 99.92,
+     "uptime": 99.7,
      "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
@@ -7774,15 +7774,26 @@
     },
     {
      "date": "2026-10-07",
-     "state": "up",
+     "state": "down",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuunnnnnnnnnnnnnn",
-     "partial": true
+     "uptime": 99.96,
+     "hours": "uuuuuuuuudnnnnnnnnnnnnnn",
+     "partial": true,
+     "incidents": [
+      2
+     ]
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 2,
+     "title": "Site FreakLabs is down",
+     "severity": "down",
+     "start": "2026-10-07T07:54:01.000Z",
+     "end": null
+    }
+   ]
   },
   "webhooks-n8n": {
    "name": "Serveur d’automatisation · n8n",
