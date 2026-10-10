@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-10T21:02:19.940Z",
+ "generatedAt": "2026-10-10T22:03:31.791Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -20,10 +20,6 @@
     "timeYear": 1307
    },
    "days": [
-    {
-     "date": "2025-10-11",
-     "state": "none"
-    },
     {
      "date": "2025-10-12",
      "state": "none"
@@ -1543,8 +1539,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-09",
@@ -1560,7 +1555,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-11",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1584,10 +1587,6 @@
    },
    "days": [
     {
-     "date": "2025-10-11",
-     "state": "none"
-    },
-    {
      "date": "2025-10-12",
      "state": "none"
     },
@@ -3106,8 +3105,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-09",
@@ -3123,7 +3121,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-11",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3147,10 +3153,6 @@
    },
    "days": [
     {
-     "date": "2025-10-11",
-     "state": "none"
-    },
-    {
      "date": "2025-10-12",
      "state": "none"
     },
@@ -4669,8 +4671,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-09",
@@ -4686,7 +4687,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-11",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -4709,10 +4718,6 @@
     "timeYear": 684
    },
    "days": [
-    {
-     "date": "2025-10-11",
-     "state": "none"
-    },
     {
      "date": "2025-10-12",
      "state": "none"
@@ -6236,7 +6241,6 @@
      "down": 1440,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddddddddddddddddddddd",
      "incidents": [
       1
      ]
@@ -6255,10 +6259,21 @@
     {
      "date": "2026-10-10",
      "state": "down",
-     "down": 1382,
+     "down": 1440,
      "degraded": 0,
      "uptime": 0,
      "hours": "dddddddddddddddddddddddd",
+     "incidents": [
+      1
+     ]
+    },
+    {
+     "date": "2026-10-11",
+     "state": "down",
+     "down": 4,
+     "degraded": 0,
+     "uptime": 0,
+     "hours": "dnnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
       1
@@ -6292,10 +6307,6 @@
     "timeYear": 698
    },
    "days": [
-    {
-     "date": "2025-10-11",
-     "state": "none"
-    },
     {
      "date": "2025-10-12",
      "state": "none"
@@ -7819,7 +7830,6 @@
      "down": 1440,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddddddddddddddddddddd",
      "incidents": [
       2
      ]
@@ -7838,10 +7848,21 @@
     {
      "date": "2026-10-10",
      "state": "down",
-     "down": 1382,
+     "down": 1440,
      "degraded": 0,
      "uptime": 0,
      "hours": "dddddddddddddddddddddddd",
+     "incidents": [
+      2
+     ]
+    },
+    {
+     "date": "2026-10-11",
+     "state": "down",
+     "down": 4,
+     "degraded": 0,
+     "uptime": 0,
+     "hours": "dnnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
       2
@@ -7875,10 +7896,6 @@
     "timeYear": 872
    },
    "days": [
-    {
-     "date": "2025-10-11",
-     "state": "none"
-    },
     {
      "date": "2025-10-12",
      "state": "none"
@@ -9398,8 +9415,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-09",
@@ -9415,7 +9431,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-11",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
