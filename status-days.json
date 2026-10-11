@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-11T02:02:24.366Z",
+ "generatedAt": "2026-10-11T03:03:33.958Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -13,11 +13,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1307,
-    "timeDay": 1382,
-    "timeWeek": 1302,
-    "timeMonth": 1307,
-    "timeYear": 1307
+    "time": 1306,
+    "timeDay": 1267,
+    "timeWeek": 1346,
+    "timeMonth": 1306,
+    "timeYear": 1306
    },
    "days": [
     {
@@ -1563,7 +1563,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1579,11 +1579,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1097,
-    "timeDay": 790,
-    "timeWeek": 935,
-    "timeMonth": 1097,
-    "timeYear": 1097
+    "time": 1092,
+    "timeDay": 939,
+    "timeWeek": 928,
+    "timeMonth": 1092,
+    "timeYear": 1092
    },
    "days": [
     {
@@ -3129,7 +3129,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3146,8 +3146,8 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 125,
-    "timeDay": 125,
-    "timeWeek": 112,
+    "timeDay": 114,
+    "timeWeek": 116,
     "timeMonth": 125,
     "timeYear": 125
    },
@@ -4695,7 +4695,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -4706,16 +4706,16 @@
    "url": "https://www.datafreak.fr",
    "startTime": "2026-09-15T18:04:27.980Z",
    "stats": {
-    "uptime": "88.54%",
+    "uptime": "85.12%",
     "uptimeDay": "0.00%",
-    "uptimeWeek": "60.09%",
-    "uptimeMonth": "88.54%",
-    "uptimeYear": "88.54%",
-    "time": 684,
-    "timeDay": 839,
-    "timeWeek": 726,
-    "timeMonth": 684,
-    "timeYear": 684
+    "uptimeWeek": "46.11%",
+    "uptimeMonth": "85.12%",
+    "uptimeYear": "85.12%",
+    "time": 682,
+    "timeDay": 611,
+    "timeWeek": 711,
+    "timeMonth": 682,
+    "timeYear": 682
    },
    "days": [
     {
@@ -6270,10 +6270,10 @@
     {
      "date": "2026-10-11",
      "state": "down",
-     "down": 242,
+     "down": 304,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddnnnnnnnnnnnnnnnnnnn",
+     "hours": "ddddddnnnnnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
       1
@@ -6295,16 +6295,16 @@
    "url": "https://freaklabs.io",
    "startTime": "2026-09-15T18:04:28.495Z",
    "stats": {
-    "uptime": "88.54%",
+    "uptime": "85.12%",
     "uptimeDay": "0.00%",
-    "uptimeWeek": "60.10%",
-    "uptimeMonth": "88.54%",
-    "uptimeYear": "88.54%",
-    "time": 698,
-    "timeDay": 658,
-    "timeWeek": 695,
-    "timeMonth": 698,
-    "timeYear": 698
+    "uptimeWeek": "46.12%",
+    "uptimeMonth": "85.12%",
+    "uptimeYear": "85.12%",
+    "time": 703,
+    "timeDay": 857,
+    "timeWeek": 754,
+    "timeMonth": 703,
+    "timeYear": 703
    },
    "days": [
     {
@@ -7859,10 +7859,10 @@
     {
      "date": "2026-10-11",
      "state": "down",
-     "down": 242,
+     "down": 304,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddnnnnnnnnnnnnnnnnnnn",
+     "hours": "ddddddnnnnnnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
       2
@@ -7889,11 +7889,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 872,
-    "timeDay": 968,
-    "timeWeek": 729,
-    "timeMonth": 872,
-    "timeYear": 872
+    "time": 873,
+    "timeDay": 903,
+    "timeWeek": 796,
+    "timeMonth": 873,
+    "timeYear": 873
    },
    "days": [
     {
@@ -9439,7 +9439,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
