@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-16T21:02:23.677Z",
+ "generatedAt": "2026-10-16T22:02:36.931Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -20,10 +20,6 @@
     "timeYear": 1287
    },
    "days": [
-    {
-     "date": "2025-10-17",
-     "state": "none"
-    },
     {
      "date": "2025-10-18",
      "state": "none"
@@ -1561,8 +1557,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-15",
@@ -1578,7 +1573,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1602,10 +1605,6 @@
    },
    "days": [
     {
-     "date": "2025-10-17",
-     "state": "none"
-    },
-    {
      "date": "2025-10-18",
      "state": "none"
     },
@@ -3142,8 +3141,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-15",
@@ -3159,7 +3157,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3183,10 +3189,6 @@
    },
    "days": [
     {
-     "date": "2025-10-17",
-     "state": "none"
-    },
-    {
      "date": "2025-10-18",
      "state": "none"
     },
@@ -4723,8 +4725,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-15",
@@ -4740,7 +4741,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -4763,10 +4772,6 @@
     "timeYear": 679
    },
    "days": [
-    {
-     "date": "2025-10-17",
-     "state": "none"
-    },
     {
      "date": "2025-10-18",
      "state": "none"
@@ -6326,7 +6331,6 @@
      "down": 1440,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddddddddddddddddddddd",
      "incidents": [
       1
      ]
@@ -6347,12 +6351,20 @@
      "state": "down",
      "down": 637,
      "degraded": 0,
-     "uptime": 53.93,
+     "uptime": 55.77,
      "hours": "ddddddddddduuuuuuuuuuuuu",
-     "partial": true,
      "incidents": [
       1
      ]
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
+     "partial": true
     }
    ],
    "incidents": [
@@ -6382,10 +6394,6 @@
     "timeYear": 709
    },
    "days": [
-    {
-     "date": "2025-10-17",
-     "state": "none"
-    },
     {
      "date": "2025-10-18",
      "state": "none"
@@ -7945,7 +7953,6 @@
      "down": 1440,
      "degraded": 0,
      "uptime": 0,
-     "hours": "dddddddddddddddddddddddd",
      "incidents": [
       2
      ]
@@ -7966,12 +7973,20 @@
      "state": "down",
      "down": 637,
      "degraded": 0,
-     "uptime": 53.94,
+     "uptime": 55.78,
      "hours": "ddddddddddduuuuuuuuuuuuu",
-     "partial": true,
      "incidents": [
       2
      ]
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
+     "partial": true
     }
    ],
    "incidents": [
@@ -8001,10 +8016,6 @@
     "timeYear": 902
    },
    "days": [
-    {
-     "date": "2025-10-17",
-     "state": "none"
-    },
     {
      "date": "2025-10-18",
      "state": "none"
@@ -9542,8 +9553,7 @@
      "state": "up",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+     "uptime": 100
     },
     {
      "date": "2026-10-15",
@@ -9559,7 +9569,15 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu",
+     "hours": "uuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+     "date": "2026-10-17",
+     "state": "up",
+     "down": 0,
+     "degraded": 0,
+     "uptime": 100,
+     "hours": "unnnnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
