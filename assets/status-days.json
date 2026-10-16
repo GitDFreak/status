@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-16T08:05:01.011Z",
+ "generatedAt": "2026-10-16T08:36:58.700Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -6345,9 +6345,9 @@
     {
      "date": "2026-10-16",
      "state": "down",
-     "down": 605,
+     "down": 637,
      "degraded": 0,
-     "uptime": 0,
+     "uptime": 0.01,
      "hours": "dddddddddddnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
@@ -6361,7 +6361,7 @@
      "title": "Site DataFreak is down",
      "severity": "down",
      "start": "2026-10-07T07:52:28.000Z",
-     "end": null
+     "end": "2026-10-16T08:36:55.000Z"
     }
    ]
   },
@@ -7964,9 +7964,9 @@
     {
      "date": "2026-10-16",
      "state": "down",
-     "down": 605,
+     "down": 637,
      "degraded": 0,
-     "uptime": 0,
+     "uptime": 0.03,
      "hours": "dddddddddddnnnnnnnnnnnnn",
      "partial": true,
      "incidents": [
@@ -7980,7 +7980,7 @@
      "title": "Site FreakLabs is down",
      "severity": "down",
      "start": "2026-10-07T07:54:01.000Z",
-     "end": null
+     "end": "2026-10-16T08:36:46.000Z"
     }
    ]
   },
