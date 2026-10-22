@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-22T16:05:16.447Z",
+ "generatedAt": "2026-10-22T17:04:47.190Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -1596,7 +1596,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -3195,7 +3195,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -4794,7 +4794,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -6282,73 +6282,103 @@
     },
     {
      "date": "2026-10-07",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 848,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 41.14,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-08",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-09",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-10",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-11",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-12",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-13",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-14",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-15",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 1440,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 0,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-16",
-     "state": "up",
-     "down": 0,
+     "state": "down",
+     "down": 637,
      "degraded": 0,
-     "uptime": 100
+     "uptime": 55.77,
+     "incidents": [
+      1
+     ]
     },
     {
      "date": "2026-10-17",
@@ -6393,11 +6423,19 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 1,
+     "title": "Site DataFreak is down",
+     "severity": "down",
+     "start": "2026-10-07T07:52:28.000Z",
+     "end": "2026-10-16T08:36:55.000Z"
+    }
+   ]
   },
   "site-freak-labs": {
    "name": "Site FreakLabs",
@@ -8022,7 +8060,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -9629,7 +9667,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
