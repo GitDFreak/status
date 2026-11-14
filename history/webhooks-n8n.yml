@@ -1,7 +1,7 @@
 url: https://n8n.datafreak.fr/webhook/status-probe
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2026-11-14T17:36:07.003Z
+status: up
+code: 404
+responseTime: 658
+lastUpdated: 2026-11-14T17:40:54.006Z
 startTime: 2026-09-15T18:04:28.959Z
 generator: Upptime <https://github.com/upptime/upptime>
