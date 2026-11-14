@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T17:36:18.004Z",
+ "generatedAt": "2026-11-14T17:36:37.839Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -5012,11 +5012,11 @@
    "url": "https://www.datafreak.fr",
    "startTime": "2026-09-15T18:04:27.980Z",
    "stats": {
-    "uptime": "84.80%",
+    "uptime": "84.94%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "92.76%",
-    "uptimeYear": "84.80%",
+    "uptimeMonth": "94.66%",
+    "uptimeYear": "84.94%",
     "time": 674,
     "timeDay": 302,
     "timeWeek": 643,
@@ -6718,11 +6718,11 @@
    "url": "https://freaklabs.io",
    "startTime": "2026-09-15T18:04:28.495Z",
    "stats": {
-    "uptime": "84.80%",
+    "uptime": "84.95%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "92.76%",
-    "uptimeYear": "84.80%",
+    "uptimeMonth": "94.66%",
+    "uptimeYear": "84.95%",
     "time": 711,
     "timeDay": 968,
     "timeWeek": 555,
@@ -8425,7 +8425,7 @@
    "startTime": "2026-09-15T18:04:28.959Z",
    "stats": {
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -10078,9 +10078,9 @@
     {
      "date": "2026-11-14",
      "state": "down",
-     "down": 0,
+     "down": 1,
      "degraded": 0,
-     "uptime": 99.98,
+     "uptime": 99.95,
      "hours": "uuuuuuuuuuuuuuuuuudnnnnn",
      "partial": true,
      "incidents": [
