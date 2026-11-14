@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T17:41:06.308Z",
+ "generatedAt": "2026-11-14T18:05:10.043Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -1665,7 +1665,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -3333,7 +3333,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -5001,7 +5001,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -5015,7 +5015,7 @@
     "uptime": "84.94%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "94.66%",
+    "uptimeMonth": "94.67%",
     "uptimeYear": "84.94%",
     "time": 674,
     "timeDay": 302,
@@ -6699,7 +6699,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -6721,7 +6721,7 @@
     "uptime": "84.95%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "94.66%",
+    "uptimeMonth": "94.67%",
     "uptimeYear": "84.95%",
     "time": 711,
     "timeDay": 968,
@@ -8405,7 +8405,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
      "partial": true
     }
    ],
@@ -8424,16 +8424,16 @@
    "url": "https://n8n.datafreak.fr/webhook/status-probe",
    "startTime": "2026-09-15T18:04:28.959Z",
    "stats": {
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 883,
-    "timeDay": 639,
-    "timeWeek": 690,
-    "timeMonth": 863,
-    "timeYear": 883
+    "uptime": "99.99%",
+    "uptimeDay": "99.66%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
+    "time": 880,
+    "timeDay": 649,
+    "timeWeek": 686,
+    "timeMonth": 857,
+    "timeYear": 880
    },
    "days": [
     {
@@ -10077,26 +10077,15 @@
     },
     {
      "date": "2026-11-14",
-     "state": "down",
-     "down": 5,
+     "state": "up",
+     "down": 0,
      "degraded": 0,
-     "uptime": 99.57,
-     "hours": "uuuuuuuuuuuuuuuuuudnnnnn",
-     "partial": true,
-     "incidents": [
-      3
-     ]
+     "uptime": 100,
+     "hours": "uuuuuuuuuuuuuuuuuuuunnnn",
+     "partial": true
     }
    ],
-   "incidents": [
-    {
-     "number": 3,
-     "title": "Serveur d’automatisation · n8n is down",
-     "severity": "down",
-     "start": "2026-11-14T17:36:07.000Z",
-     "end": "2026-11-14T17:40:57.000Z"
-    }
-   ]
+   "incidents": []
   }
  }
 }
