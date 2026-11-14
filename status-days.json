@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T17:04:19.520Z",
+ "generatedAt": "2026-11-14T17:36:18.004Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -10077,15 +10077,26 @@
     },
     {
      "date": "2026-11-14",
-     "state": "up",
+     "state": "down",
      "down": 0,
      "degraded": 0,
-     "uptime": 100,
-     "hours": "uuuuuuuuuuuuuuuuuuunnnnn",
-     "partial": true
+     "uptime": 99.98,
+     "hours": "uuuuuuuuuuuuuuuuuudnnnnn",
+     "partial": true,
+     "incidents": [
+      3
+     ]
     }
    ],
-   "incidents": []
+   "incidents": [
+    {
+     "number": 3,
+     "title": "Serveur d’automatisation · n8n is down",
+     "severity": "down",
+     "start": "2026-11-14T17:36:07.000Z",
+     "end": null
+    }
+   ]
   }
  }
 }
