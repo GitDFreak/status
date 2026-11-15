@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15T03:05:44.820Z",
+ "generatedAt": "2026-11-15T04:04:33.237Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -13,11 +13,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1365,
-    "timeDay": 929,
-    "timeWeek": 1905,
-    "timeMonth": 1442,
-    "timeYear": 1365
+    "time": 1361,
+    "timeDay": 1070,
+    "timeWeek": 1872,
+    "timeMonth": 1454,
+    "timeYear": 1361
    },
    "days": [
     {
@@ -1668,7 +1668,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1684,11 +1684,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1104,
-    "timeDay": 1763,
-    "timeWeek": 1132,
-    "timeMonth": 1126,
-    "timeYear": 1104
+    "time": 1102,
+    "timeDay": 931,
+    "timeWeek": 1174,
+    "timeMonth": 1118,
+    "timeYear": 1102
    },
    "days": [
     {
@@ -3339,7 +3339,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3356,7 +3356,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 124,
-    "timeDay": 126,
+    "timeDay": 88,
     "timeWeek": 119,
     "timeMonth": 123,
     "timeYear": 124
@@ -5010,7 +5010,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -5021,16 +5021,16 @@
    "url": "https://www.datafreak.fr",
    "startTime": "2026-09-15T18:04:27.980Z",
    "stats": {
-    "uptime": "84.94%",
+    "uptime": "85.04%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "94.67%",
-    "uptimeYear": "84.94%",
-    "time": 674,
-    "timeDay": 302,
-    "timeWeek": 643,
-    "timeMonth": 672,
-    "timeYear": 674
+    "uptimeMonth": "95.99%",
+    "uptimeYear": "85.04%",
+    "time": 668,
+    "timeDay": 236,
+    "timeWeek": 613,
+    "timeMonth": 654,
+    "timeYear": 668
    },
    "days": [
     {
@@ -6711,7 +6711,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -6730,16 +6730,16 @@
    "url": "https://freaklabs.io",
    "startTime": "2026-09-15T18:04:28.495Z",
    "stats": {
-    "uptime": "84.95%",
+    "uptime": "85.05%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "94.67%",
-    "uptimeYear": "84.95%",
-    "time": 711,
-    "timeDay": 968,
-    "timeWeek": 555,
-    "timeMonth": 710,
-    "timeYear": 711
+    "uptimeMonth": "95.99%",
+    "uptimeYear": "85.05%",
+    "time": 709,
+    "timeDay": 565,
+    "timeWeek": 616,
+    "timeMonth": 708,
+    "timeYear": 709
    },
    "days": [
     {
@@ -8420,7 +8420,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -8439,16 +8439,16 @@
    "url": "https://n8n.datafreak.fr/webhook/status-probe",
    "startTime": "2026-09-15T18:04:28.959Z",
    "stats": {
-    "uptime": "99.99%",
-    "uptimeDay": "99.66%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
-    "time": 880,
-    "timeDay": 649,
-    "timeWeek": 686,
-    "timeMonth": 857,
-    "timeYear": 880
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 878,
+    "timeDay": 723,
+    "timeWeek": 679,
+    "timeMonth": 849,
+    "timeYear": 878
    },
    "days": [
     {
@@ -10099,7 +10099,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuunnnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
