@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-20T04:02:03.965Z",
+ "generatedAt": "2026-11-20T05:03:04.811Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -13,11 +13,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1349,
-    "timeDay": 1204,
-    "timeWeek": 1152,
-    "timeMonth": 1428,
-    "timeYear": 1349
+    "time": 1354,
+    "timeDay": 1706,
+    "timeWeek": 1188,
+    "timeMonth": 1445,
+    "timeYear": 1354
    },
    "days": [
     {
@@ -1683,7 +1683,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -1699,11 +1699,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1093,
-    "timeDay": 1121,
-    "timeWeek": 1079,
-    "timeMonth": 1089,
-    "timeYear": 1093
+    "time": 1095,
+    "timeDay": 1195,
+    "timeWeek": 1102,
+    "timeMonth": 1080,
+    "timeYear": 1095
    },
    "days": [
     {
@@ -3369,7 +3369,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3385,11 +3385,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 122,
-    "timeDay": 93,
+    "time": 123,
+    "timeDay": 153,
     "timeWeek": 107,
-    "timeMonth": 119,
-    "timeYear": 122
+    "timeMonth": 120,
+    "timeYear": 123
    },
    "days": [
     {
@@ -5055,7 +5055,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -5066,16 +5066,16 @@
    "url": "https://www.datafreak.fr",
    "startTime": "2026-09-15T18:04:27.980Z",
    "stats": {
-    "uptime": "85.99%",
+    "uptime": "86.20%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "85.99%",
-    "time": 660,
-    "timeDay": 576,
-    "timeWeek": 533,
-    "timeMonth": 626,
-    "timeYear": 660
+    "uptimeYear": "86.20%",
+    "time": 656,
+    "timeDay": 310,
+    "timeWeek": 425,
+    "timeMonth": 606,
+    "timeYear": 656
    },
    "days": [
     {
@@ -6771,7 +6771,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -6790,15 +6790,15 @@
    "url": "https://freaklabs.io",
    "startTime": "2026-09-15T18:04:28.495Z",
    "stats": {
-    "uptime": "85.99%",
+    "uptime": "86.20%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "85.99%",
+    "uptimeYear": "86.20%",
     "time": 695,
-    "timeDay": 344,
-    "timeWeek": 585,
-    "timeMonth": 557,
+    "timeDay": 721,
+    "timeWeek": 586,
+    "timeMonth": 553,
     "timeYear": 695
    },
    "days": [
@@ -8495,7 +8495,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -8519,11 +8519,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 871,
-    "timeDay": 869,
-    "timeWeek": 718,
-    "timeMonth": 807,
-    "timeYear": 871
+    "time": 878,
+    "timeDay": 1399,
+    "timeWeek": 806,
+    "timeMonth": 812,
+    "timeYear": 878
    },
    "days": [
     {
@@ -10189,7 +10189,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uuuuuunnnnnnnnnnnnnnnnnn",
+     "hours": "uuuuuuunnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
