@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-25T00:03:25.809Z",
+ "generatedAt": "2026-11-25T01:04:57.266Z",
  "timeZone": "Europe/Paris",
  "days": 365,
  "sites": {
@@ -1698,7 +1698,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -3399,7 +3399,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -5100,7 +5100,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -6831,7 +6831,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -8570,7 +8570,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
@@ -10279,7 +10279,7 @@
      "down": 0,
      "degraded": 0,
      "uptime": 100,
-     "hours": "uunnnnnnnnnnnnnnnnnnnnnn",
+     "hours": "uuunnnnnnnnnnnnnnnnnnnnn",
      "partial": true
     }
    ],
